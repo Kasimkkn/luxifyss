@@ -10,6 +10,7 @@
       height: 90%;
       max-width: 400px;
       padding: 2rem;
+      background-color:$color1;
       border-radius: 15px;
       @include baseShadow;
       @include flex(column, center, stretch);
