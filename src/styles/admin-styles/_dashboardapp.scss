@@ -1,0 +1,113 @@
+.dashboard-app-container {
+  background-color: white;
+  padding: 2rem;
+  >h1{
+    color: $color3;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+  }
+  > section {
+    @include flex(row, flex-start, flex-start, 2rem);
+    flex-wrap: wrap;
+    .coupon-form {
+      height: max-content;
+      @include grid(2fr 1fr, 2rem);
+      max-width: 30rem;
+      border-radius: 15px;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.216);
+      > input {
+        text-transform: uppercase;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.359);
+        outline: none;
+        border-radius: 5px;
+      }
+
+      > fieldset {
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.359);
+        border-radius: 5px;
+        @include flex(row, center, center, 0);
+        flex-wrap: wrap;
+        grid-column: 1/3;
+
+        span {
+          font-size: 0.8rem;
+          color: $color2;
+          font-weight: 300;
+          margin-inline-start: 0.25rem;
+          margin-inline-end: 1rem;
+        }
+      }
+
+      > button {
+        font-weight: 300;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        color: $color2;
+        cursor: pointer;
+        border-radius: 10px;
+        grid-column: 1/3;
+        background-color: $color3;
+      }
+    }
+
+    .coupon-code-form{
+      height: max-content;
+      @include grid(2fr 1fr, 2rem);
+      max-width: 30rem;
+      width: 100%;
+      border-radius: 15px;
+      padding: 2rem;
+      box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.216);
+      > input {
+        text-transform: uppercase;
+        padding: 1rem;
+        border: 1px solid rgba(0, 0, 0, 0.359);
+        outline: none;
+        border-radius: 5px;
+      }
+      
+      > button {
+        font-weight: 300;
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        color: $color2;
+        cursor: pointer;
+        border-radius: 10px;
+        grid-column: 1/3;
+        background-color: $color3;
+      }
+    }
+    > code {
+      position: relative;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      &:hover > span {
+        opacity: 1;
+      }
+
+      > span {
+        opacity: 0;
+        @include square(100%);
+        top: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 5px;
+        background-color: rgb(15, 15, 15);
+        color: white;
+        font-size: 0.8rem;
+        @include flex;
+      }
+    }
+  }
+}

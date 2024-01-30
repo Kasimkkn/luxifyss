@@ -1,0 +1,149 @@
+@media screen and (width<= 1200px) {
+  .admin-container {
+    overflow: auto;
+  }
+
+  .dashboard {
+    .widget-container,
+    .graph-container,
+    .transaction-container {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .graph-container {
+      padding: 2rem;
+    }
+    .transaction-container {
+      padding: 2rem;
+      height: unset;
+    }
+  }
+
+  .product-management {
+    padding: 2rem;
+  }
+}
+
+@media screen and (width<= 1100px) {
+  .admin-container {
+    grid-template-columns: 1fr !important;
+  }
+  .product-card{
+    width: 17.75rem;
+  }
+}
+@media screen and (width<= 1065px) {
+  .product-card{
+    width: 15.75rem;
+  }
+}
+@media screen and (width<= 1000px) {
+  .product-search-page > main .search-product-list{
+    gap: 2rem;
+  }
+  .product-card{
+    width: 14.75rem;
+  }
+}
+@media screen and (width<= 985px) {
+  .product-search-page > main .search-product-list{
+    gap: 1rem;
+  }
+  .product-card  >p{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (width<= 768px) {
+  .cart {
+    display: block;
+    padding: 2rem;
+
+    > main {
+      width: 100%;
+    }
+    > aside {
+      width: 100%;
+    }
+  }
+
+  .cartitem {
+    width: 100%;
+    > img {
+      width: 3rem;
+      height: 3rem;
+    }
+    > div {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  .product-search-page {
+    display: block;
+    padding: 0;
+
+    > aside {
+      @include flex(row, space-between, center);
+      flex-wrap: wrap;
+      box-shadow: none;
+      > h2 {
+        display: none;
+      }
+    }
+    >main > h1{
+      font-size: 1.5rem;
+    }
+    > main > input {
+      width: 100%;
+      border: 1px solid rgba(212, 212, 212, 0.379);
+    }
+  }
+  .product-card{
+    width: 18.75rem;
+  }
+}
+
+@media screen and (width<= 600px) {
+  .product-management {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    > section {
+      max-width: 400px;
+    }
+  }
+
+  .chart-container {
+    padding: 0;
+    > h1 {
+      margin: 0;
+      text-align: center;
+    }
+    > section {
+      margin: 8rem auto;
+    }
+  }
+
+
+      .cartitem {
+        @include flex(column,flex-start,flex-start,1rem);
+        
+      
+      }
+
+  .dashboard-app-container > section {
+    .coupon-form,
+    .stopwatch {
+      display: flex;
+      flex-direction: column;
+    }
+    .stopwatch {
+      align-items: center;
+    }
+  }
+  .product-card{
+    width: 20.75rem;
+  }
+}
+
