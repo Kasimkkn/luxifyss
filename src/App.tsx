@@ -40,6 +40,10 @@ const TransactionManagement = lazy(
 );
 
 const App = () => {
+  
+   return signOut(auth).then(() => {
+     console.log("Sign-out successful.");
+   })
   const { user, loading } = useSelector(
     (state: RootState) => state.userReducer
   );
