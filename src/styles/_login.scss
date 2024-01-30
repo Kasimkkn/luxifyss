@@ -10,10 +10,13 @@
       height: 90%;
       max-width: 400px;
       padding: 2rem;
-      background-color:$color1;
       border-radius: 15px;
+      background-color: $color1;
       @include baseShadow;
       @include flex(column, center, stretch);
+      >h1{
+        color: $color2;
+      }
       > div {
         width: 100%;
         @include flex(column, flex-start, stretch, 0.2rem);

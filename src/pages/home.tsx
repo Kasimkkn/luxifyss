@@ -41,7 +41,7 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-          <img src={`${server}/${data?.products[0].photo}`} alt="" />
+          <img src={`${server}/${data?.products[0]?.photo}`} alt="" />
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -78,8 +78,8 @@ const Home = () => {
       </main>
 
       <div className="home-about-box">
-        <div className="home-aboutimage" style={{ background:`linear-gradient(to bottom,${data?.products[2].color},white` }}>
-          <img src={`${server}/${data?.products[2].photo}`} alt="" />
+        <div className="home-aboutimage" style={{ background:`linear-gradient(to bottom,${data?.products[2]?.color},white` }}>
+          <img src={`${server}/${data?.products[2]?.photo}`} alt="" />
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -166,10 +166,10 @@ const Home = () => {
       <div
         className="image-box"
         style={{
-          background: `linear-gradient(to top, ${data?.products[1].color}, white)`,
+          background: `linear-gradient(to top, ${data?.products[1]?.color}, white)`,
         }}
       >
-        <img src={`${server}/${data?.products[1].photo}`} alt="" />
+        <img src={`${server}/${data?.products[1]?.photo}`} alt="" />
       </div>
     </div>
   </div>
