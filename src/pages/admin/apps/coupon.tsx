@@ -3,38 +3,17 @@ import AdminSidebar from "../../../components/admin/AdminSidebar";
 import  toast  from "react-hot-toast";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
+import { RootState, server } from "../../../redux/store";
 import { responseToast } from "../../../utils/features";
 import { useNavigate } from "react-router-dom";
-import { Column } from "react-table";
 
 const allLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 const allNumbers = "1234567890";
 const allSymbols = "!@#$%^&*()_+";
 
-interface DiscountType {
-  _id: string;
-  coupon: string;
-  amount: number;
-}
 
-const columns: Column<DiscountType>[] = [
-  {
-    Header: "Id",
-    accessor: "_id",
-  },
-  {
-    Header: "Coupon",
-    accessor: "coupon",
-  },
-  {
-    Header: "Amount",
-    accessor: "amount",
-  },
-];
 const Coupon = () => {
   
-  const [rows, setRows] = useState<DiscountType[]>([]);
   const [size, setSize] = useState<number>(8);
   const [prefix, setPrefix] = useState<string>("");
   const [couponCode, setCouponCode] = useState<string>("");
@@ -82,37 +61,12 @@ const Coupon = () => {
       amount: amount.toString(),
     };
   
-    const res = await axios.post(`http://localhost:4000/api/v1/payment/coupon/new?id=${user?._id}`, requestData);
+    const res = await axios.post(`${server}api/v1/payment/coupon/new?id=${user?._id}`, requestData);
 
     responseToast(res, navigate, "/admin/app/coupon");
   }
 
   useEffect(() => {
-    const fetchCoupon = async () => {
-      try {
-        const response = await axios.get<{ success: boolean, coupons: DiscountType[] }>(`http://localhost:4000/api/v1/payment/coupon/all?id=${user?._id}`);
-        const fetchedData = response.data;
-        console.log(fetchedData)  
-        if (fetchedData.success) {
-          setRows(
-            fetchedData.coupons.map((coupon) => ({
-              _id: coupon._id,
-              coupon: coupon.coupon, // Assuming the coupon code is stored in the 'code' property
-              amount: coupon.amount
-            }))
-          );
-        } else {
-          // Handle the case where the API response indicates an error
-          console.error("Error fetching data:", fetchedData);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        // Handle error as needed (e.g., display an error message)
-      }
-      setIsCopied(false);
-    };
-  
-    fetchCoupon();
   }, [coupon, user?._id]);
   
 
@@ -198,6 +152,7 @@ const Coupon = () => {
           </form>
         </section>
         <section>
+
         </section>
       </main>
     </div>
