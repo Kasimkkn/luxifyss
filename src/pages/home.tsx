@@ -70,7 +70,7 @@ const Home = () => {
               productId={i._id}
               name={i.name}
               price={i.price}
-              color={i.color}
+              color={i?.color}
               photo={i.photo}
             />
           ))
