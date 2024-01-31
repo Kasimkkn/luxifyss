@@ -7,9 +7,11 @@ import Footer from "../components/footer.tsx";
 import { IoIosPricetags } from "react-icons/io";
 import { MdAllInclusive  } from "react-icons/md";
 import { TbPremiumRights } from "react-icons/tb";
-
 import arrowImg from '../assets/images/arrow.jpeg'
 import { server } from "../redux/store.ts";
+import redImg from '../assets/images/wintercol.png'
+import PinkImg from '../assets/images/sketcher-1.png'
+import brownImg from '../assets/images/sketcher-4.png'
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductsQuery("");
   if (isError) toast.error("Cannot Fetch the Products");
@@ -41,7 +43,7 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-          <img src={`${server}/${data?.products[0]?.photo}`} alt="" />
+         {data?.products[0].photo ? <img src={`${server}/${data?.products[0].photo}`} alt="" /> : <img src={redImg} alt="" />}
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -79,7 +81,9 @@ const Home = () => {
 
       <div className="home-about-box">
         <div className="home-aboutimage" style={{ background:`linear-gradient(to bottom,${data?.products[2]?.color},white` }}>
-          <img src={`${server}/${data?.products[2]?.photo}`} alt="" />
+         {
+           data?.products[2]?.photo ? <img src={`${server}/${data?.products[2]?.photo}`} alt="" /> : <img src={brownImg} alt="" />
+         }
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -169,7 +173,9 @@ const Home = () => {
           background: `linear-gradient(to top, ${data?.products[1]?.color}, white)`,
         }}
       >
-        <img src={`${server}/${data?.products[1]?.photo}`} alt="" />
+        {
+          data?.products[1]?.photo ? <img src={`${server}/${data?.products[1]?.photo}`} alt="" /> : <img src={PinkImg} alt="" />
+        }
       </div>
     </div>
   </div>
