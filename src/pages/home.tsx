@@ -80,7 +80,9 @@ const Home = () => {
       </main>
 
       <div className="home-about-box">
-        <div className="home-aboutimage" style={{ background:`linear-gradient(to bottom,${data?.products[2]?.color},white` }}>
+        <div className="home-aboutimage" style={{ 
+  background: `linear-gradient(to bottom, ${data?.products[2]?.color || 'black'}, white)`
+}}>
          {
            data?.products[2]?.photo ? <img src={`${server}/${data?.products[2]?.photo}`} alt="" /> : <img src={brownImg} alt="" />
          }
@@ -170,7 +172,7 @@ const Home = () => {
       <div
         className="image-box"
         style={{
-          background: `linear-gradient(to top, ${data?.products[1]?.color}, white)`,
+          background: `linear-gradient(to top, ${data?.products[1]?.color || 'black'}, white)`,
         }}
       >
         {
