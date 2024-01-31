@@ -1,0 +1,467 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+  width: 0.2rem;
+  background-color: #ccc;
+}
+
+$color1: white;
+$color2: black;
+$color4: rgb(31, 30, 30);
+$color3: #faae67;
+
+body {
+  user-select: none;
+  background-color: $color2;
+}
+
+a,h1,span,h6,p {
+  text-decoration: none;
+  color: $color1;
+
+}
+a,svg:hover{
+  color: $color3;
+}
+.red {
+  color: red;
+}
+
+.purple {
+  color: rgb(47, 0, 255);
+}
+
+.green {
+  color: rgb(0, 195, 0);
+}
+
+@import "admin-styles/mixin";
+@import "home";
+@import "cart";
+@import "products";
+@import "shipping";
+@import "login";
+@import "search";
+@import "orders";
+@import "admin-styles/dashboard";
+@import "admin-styles/products";
+@import "admin-styles/chart";
+@import "admin-styles/dashboardapp";
+@import "admin-styles/mediaquery";
+
+.container {
+  max-width: 1367px;
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+
+  > h1 {
+    @include heading;
+    margin: 1rem 0;
+    text-align: left;
+  }
+}
+
+.heading {
+  @include heading;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+   background-color: $color4;
+  left: 0;
+  width: 100%;
+  @include flex(row, space-between, center, 0rem);
+  padding: 15px 50px;
+  z-index: 999;
+
+  button {
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: $color1;
+    background-color: transparent;
+    &:hover {
+      color: $color3;
+    }
+  }
+  dialog {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    position: absolute;
+    left: calc(100% - 100px);
+    top: 8%;
+    background-color: $color2;
+    > div {
+      @include flex(column, flex-start, center, 0.25rem);
+    }
+  }
+  .logo {
+    height: 50px;
+    width: 70px;
+
+    >h2{
+      @include flex(row,center,center,0rem);
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: 3px;
+      text-align: center;
+
+      >a{
+        margin-top: 4px;
+        color: $color3;
+      }
+    }
+  }
+
+  ul {
+    display: flex;
+    margin-left: 100px;
+    gap: 20px;
+    padding: 10px 30px;
+
+    a {
+      text-decoration: none;
+      color: $color1;
+      font-size: 1.2rem;
+      font-family: "thedus";
+
+      &:hover {
+        color: $color3;
+      }
+    }
+  }
+
+  .icons {
+    width: 160px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    a {
+      color: $color1;
+      font-size: 22px;
+
+      &:hover {
+        color: $color3;
+      }
+    }
+  }
+
+  .navbar-toggle {
+    display: none;
+    cursor: pointer;
+    >svg{
+
+      font-size: 22px;
+      color: $color3;
+    }
+  }
+  @media (max-width: 800px) {
+    .logo {
+      display: none;
+    }
+    ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      height: 100vh;
+      left: -100px;
+      background-color: $color2;
+      padding: 30px 50px;
+      box-shadow: 2px 0 15px inset rgba(100, 144, 238, 0.5);
+
+      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+
+    &.active {
+      ul {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar-toggle {
+      display: flex;
+    }
+  }
+}
+
+.not-found {
+  height: 80vh;
+  @include flex(column);
+
+  > svg {
+    color: $color3;
+    font-size: 5rem;
+  }
+}
+
+.checkout-container {
+  margin: 100px auto;
+  max-width: 400px;
+  width: 100%;
+
+  > form {
+    @include flex(column, flex-start, stretch, 2rem);
+
+    > button {
+      @include btn(1rem, $color3, $color1);
+      width: 100%;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.admin-container {
+  @include grid(1fr 4fr, 2rem);
+  height: max-content;
+  background-color: rgb(247, 247, 247);
+
+  > aside {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    z-index: 10;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > div {
+      margin: 2rem 1rem;
+
+      > h5 {
+        @include heading(2px);
+        opacity: 0.8;
+        margin: 1rem 0;
+      }
+
+      > ul {
+        @include flex(column, unset, unset, 0.5rem);
+        list-style: none;
+
+        > li {
+          padding: 0.5rem 1rem;
+          border-radius: 10px;
+          background-color: $color3;
+
+          a {
+            color: rgba(0, 0, 0, 0.825);
+            @include flex(row, unset);
+          }
+        }
+      }
+    }
+  }
+  >main{
+    height: 100vh;
+  }
+}
+
+.table {
+  border-collapse: separate;
+  width: 100%;
+
+  th,
+  td {
+    
+  color: $color2 !important;
+    padding: 8px;
+    text-align: left;
+    vertical-align: middle;
+  }
+
+  th {
+    font-weight: bold;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 2rem 1rem;
+    >span{
+      >svg{
+        color: $color2;
+
+        &:hover{
+          color: $color3;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.093);
+    }
+
+    td {
+      padding: 1rem;
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        background-color: $color3;
+        color: $color2;
+        padding: 0.25rem 0.5rem;
+        border-radius: 10px;
+      }
+
+      button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.1rem;
+        border: none;
+        outline: none;
+        
+        background-color: transparent;
+        color: $color2;
+        cursor: pointer;
+
+        &:hover {
+          color: $color3;
+        }
+      }
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.table-pagination {
+  @include flex;
+  padding: 2rem;
+  >span{
+    color: $color2;
+  }
+  > button {
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: $color3;
+    color: $color2;
+
+    &:disabled {
+      background-color: rgba(0, 115, 255, 0.1);
+      cursor: not-allowed;
+    }
+  }
+}
+
+#hamburger {
+  display: grid;
+  place-items: center;
+  @include square(3rem);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $color2;
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 9;
+}
+
+#close-sidebar {
+  width: 80%;
+  margin: 1rem auto;
+  display: block;
+  padding: 0.75rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: $color3;
+  color: $color2;
+  border-radius: 10px;
+}
+
+.loader {
+  width: 100%;
+  height: 85vh;
+  @include flex;
+
+  > div {
+    @include square(10rem);
+    border-radius: 50%;
+    border-top: 1rem solid rgb(43, 43, 43);
+    border-left: 1rem solid rgb(43, 43, 43);
+    border-right: 1rem solid #fff;
+    border-bottom: 1rem solid #fff;
+    animation: loading-animation 0.5s linear infinite;
+  }
+}
+
+.skeleton-loader {
+  display: flex;
+  flex-direction: column;
+}
+
+.skeleton-shape {
+  height: 250px;
+  width: 100%;
+  background-color: #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  animation: skeleon-loading 1.5s infinite;
+}
+
+@keyframes loading-animation {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes up-and-down {
+  to {
+    transform: translate(-50%, -20%);
+  }
+}
+
+@keyframes skeleon-loading {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
