@@ -61,7 +61,7 @@ const Coupon = () => {
       amount: amount.toString(),
     };
   
-    const res = await axios.post(`${server}api/v1/payment/coupon/new?id=${user?._id}`, requestData);
+    const res = await axios.post(`${server}/api/v1/payment/coupon/new?id=${user?._id}`, requestData);
 
     responseToast(res, navigate, "/admin/app/coupon");
   }
