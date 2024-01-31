@@ -43,7 +43,12 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-         {data?.products[0].photo ? <img src={`${server}/${data?.products[0].photo}`} alt="" /> : <img src={redImg} alt="" />}
+        {data?.products[0]?.photo ? (
+  <img src={`${server}/${data?.products[0]?.photo}`} alt="" />
+) : (
+  <img src={redImg} alt="" />
+)}
+
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -83,9 +88,11 @@ const Home = () => {
         <div className="home-aboutimage" style={{ 
   background: `linear-gradient(to bottom, ${data?.products[2]?.color || 'black'}, white)`
 }}>
-         {
-           data?.products[2]?.photo ? <img src={`${server}/${data?.products[2]?.photo}`} alt="" /> : <img src={brownImg} alt="" />
-         }
+         {data?.products[2]?.photo ? (
+  <img src={`${server}/${data?.products[2]?.photo}`} alt="" />
+) : (
+  <img src={brownImg} alt="" />
+)}
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -175,9 +182,11 @@ const Home = () => {
           background: `linear-gradient(to top, ${data?.products[1]?.color || 'black'}, white)`,
         }}
       >
-        {
-          data?.products[1]?.photo ? <img src={`${server}/${data?.products[1]?.photo}`} alt="" /> : <img src={PinkImg} alt="" />
-        }
+        {data?.products[1]?.photo ? (
+  <img src={`${server}/${data?.products[1]?.photo}`} alt="" />
+) : (
+  <img src={PinkImg} alt="" />
+)}
       </div>
     </div>
   </div>

@@ -2,7 +2,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Suspense, lazy, useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/header";
 import Loader from "./components/loader";
 import ProtectedRoute from "./components/protected-route";
@@ -40,7 +40,7 @@ const TransactionManagement = lazy(
 );
 
 const App = () => {
-
+ const location = useLocation();
 
   const { user, loading } = useSelector(
     (state: RootState) => state.userReducer
@@ -57,13 +57,13 @@ const App = () => {
     });
   }, []);
 
-  const isAdminRoute = window.location.pathname.startsWith("/admin");
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
 
   return loading ? (
     <Loader />
   ) : (
-    <Router>
+    <>
       {/* Header */}
       {!isAdminRoute && <Header user={user} />}
       <Suspense fallback={<Loader />}>
@@ -126,7 +126,7 @@ const App = () => {
         </Routes>
       </Suspense>
       <Toaster position="bottom-center" />
-    </Router>
+    </>
   );
 };
 
