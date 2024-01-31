@@ -43,7 +43,7 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-         {data?.products[0].photo ? <img src={`${server}/${data?.products[0].photo}`} alt="" /> : <img src={redImg} alt="" />}
+         {data?.products[0]?.photo ? <img src={`${server}/${data?.products[0]?.photo}`} alt="" /> : <img src={redImg} alt="" />}
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -73,7 +73,7 @@ const Home = () => {
               name={i.name}
               price={i.price}
               color={i?.color}
-              photo={i.photo}
+              photo={i?.photo}
             />
           ))
         )}
