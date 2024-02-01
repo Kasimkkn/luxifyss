@@ -1,32 +1,82 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import img1 from "../assets/images/slider-1.png";
-import img2 from "../assets/images/slider-2.png";
+import img1 from '../assets/images/sketcher-1.png';
+import img2 from '../assets/images/wintercol.png';
+import img3 from '../assets/images/sketcher-4.png';
+import img4 from '../assets/images/sketcher-1.png';
+import img5 from '../assets/images/wintercol.png';
+import img6 from '../assets/images/sketcher-4.png';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 const ImageSlider = () => {
-  const settings = {
-    dots: true,
-    autoplaySpeed: 2000,
-    autoplay: true,
-    infinite: true,
-    speed: 2500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+  useEffect(() => {
+    let next = document.querySelector('.next');
+    let prev = document.querySelector('.prev');
+    let slider = document.querySelector('.slider');
 
+    const handleNextClick = () => {
+      let slides = document.querySelectorAll('.slides');
+      slider?.append(slides[0]);
+    };
+
+    const handlePrevClick = () => {
+      let slides = document.querySelectorAll('.slides');
+      slider?.prepend(slides[slides.length - 1]);
+    };
+
+    next?.addEventListener('click', handleNextClick);
+    prev?.addEventListener('click', handlePrevClick);
+
+    return () => {
+      next?.removeEventListener('click', handleNextClick);
+      prev?.removeEventListener('click', handlePrevClick);
+    };
+  }, []);
+  
   return (
-    <div className="image-slider">
-      <Slider {...settings}>
-        <div>
-          <img src={img1} alt="Slider Image 1" className="slider-image" />
+    <>
+    <div className="silder-container">   
+      <div className="slider">
+            <div className="slides" style={{backgroundImage:`url(${img1})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
+            <div className="slides" style={{backgroundImage:`url(${img2})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
+            <div className="slides" style={{backgroundImage:`url(${img3})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
+            <div className="slides" style={{backgroundImage:`url(${img4})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
+            <div className="slides" style={{backgroundImage:`url(${img5})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
+            <div className="slides" style={{backgroundImage:`url(${img6})`}}>
+                <div className="content">
+                    <Link className='linkBtn' to={'/search'}>buy now</Link>
+                </div>
+            </div>
         </div>
-        <div>
-          <img src={img2} alt="Slider Image 2" className="slider-image" />
-        </div>
-        {/* Add more slides as needed */}
-      </Slider>
+
+    <div className="buttons">
+      <span className="prev" ></span>
+      <span className="next" ></span>
     </div>
-  );
+  </div>
+
+  </>
+
+  
+);
 };
 
 export default ImageSlider;

@@ -4,6 +4,10 @@ img:hover {
   transition: all 0.5s;
 }
 
+.home-container{
+  padding-top: 3rem;
+  position: relative;
+}
 .home {
   padding: 2rem;
   display: flex;
@@ -65,22 +69,23 @@ img:hover {
 
     > .offer-image {
       background-image: url("../assets/images/nike1.jpg");
-      background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      width: 45%;
-      height: 100%;
+      background-position: center;
+      width: 50%;
+      flex-direction: column;
+      display: flex;
+      position: relative;
+      align-items: flex-end;
+      justify-content: flex-end;
       > img {
+        position: absolute;
         object-fit: cover;
         width: 100%;
       }
       > .arrow-box {
         filter: brightness(100);
-        position: relative;
-        width: 105px;
-        z-index: 1;
-        top: -10rem;
-        left: 18rem;
+        width: 120px;
         transform: rotate(30deg);
         > img {
           width: 100%;
@@ -88,9 +93,6 @@ img:hover {
       }
       > .offer-review-box {
         width: max-content;
-        position: relative;
-        top: -11rem;
-        left: 24rem;
       }
     }
   }
@@ -102,7 +104,7 @@ img:hover {
     gap: 2rem;
 
     > .home-aboutimage {
-      width: 20rem;
+      // width: 20rem;
       border-radius: 20px;
       > img {
         object-fit: cover;
@@ -434,13 +436,7 @@ img:hover {
         }
         > .arrow-box {
           width: 80px;
-          top: -4rem;
-          left: 10rem;
           transform: rotate(30deg);
-        }
-        > .offer-review-box {
-          top: -3rem;
-          left: 13rem;
         }
       }
     }
@@ -466,44 +462,8 @@ img:hover {
         > .popular-image {
           width: 100%;
           > .image-box {
-            width: 70%;
+            width: 100%;
           }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 1200px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 80px;
-          top: -7rem;
-          left: 15rem;
-          transform: rotate(30deg);
-        }
-        > .offer-review-box {
-          top: -6rem;
-          left: 19rem;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 1120px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 80px;
-          top: -6rem;
-          left: 14rem;
-          transform: rotate(30deg);
-        }
-        > .offer-review-box {
-          top: -6rem;
-          left: 19rem;
         }
       }
     }
@@ -521,20 +481,6 @@ img:hover {
       }
       > .offer-image {
         width: 100%;
-        > img {
-          position: relative;
-          top: 2rem;
-        }
-        > .arrow-box {
-          width: 80px;
-          top: -4.5rem;
-          left: 15rem;
-          transform: rotate(30deg);
-        }
-        > .offer-review-box {
-          top: -4rem;
-          left: 17rem;
-        }
       }
     }
 
@@ -559,7 +505,7 @@ img:hover {
         > .popular-image {
           width: 100%;
           > .image-box {
-            width: 70%;
+            width: 100%;
           }
         }
       }
@@ -570,128 +516,15 @@ img:hover {
   .home {
     > .offer-box {
       flex-direction: column;
-      margin-top: 50px;
-
-      > .offer-content {
-        gap: 1rem;
-        width: 100%;
-        > h2 {
-          font-size: 3.4rem;
-        }
-      }
-      > .offer-image {
-        width: 100%;
-        > .arrow-box {
-          width: 100px;
-          top: -11rem;
-          left: 25rem;
-          transform: rotate(30deg);
-        }
-        > .offer-review-box {
-          top: -11rem;
-          left: 30rem;
-        }
-      }
+      margin-top: 50px; 
     }
 
     > .home-about-box {
       padding: 0;
       align-items: center;
       flex-direction: column-reverse;
-      > .home-about-content {
-        width: 100%;
-      }
       > .home-aboutimage {
-        width: 70%;
-      }
-    }
-
-    > .popular-products-box {
-      > .popular-products {
-        flex-direction: column;
-
-        > .popular-content {
-          width: 100%;
-          align-items: center;
-        }
-        > .popular-image {
-          width: 100%;
-          > .image-box {
-            width: 70%;
-          }
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 720px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 80px;
-    top: -10rem;
-    left: 23rem;
-    transform: rotate(146deg)
-        }
-        > .offer-review-box {
-          top: -8rem;
-          left: 17rem;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 620px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 80px;
-    top: -5rem;
-    left: 20rem;
-    transform: rotate(30deg)
-        }
-        > .offer-review-box {
-          top: -3rem;
-          left: 19rem;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 500px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 80px;
-    top: -4rem;
-    left: 15rem;
-    transform: rotate(30deg)
-        }
-        > .offer-review-box {
-          top: -4rem;
-          left: 12rem;
-        }
-      }
-    }
-  }
-}
-@media screen and (max-width: 421px) {
-  .home {
-    > .offer-box {
-      > .offer-image {
-        > .arrow-box {
-          width: 60px;
-    top: -3rem;
-    left: 11rem;
-    transform: rotate(30deg)
-        }
-        > .offer-review-box {
-          top: -2rem;
-          left: 8rem;
-        }
+        width: 100%;
       }
     }
   }

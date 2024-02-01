@@ -12,11 +12,14 @@ import { server } from "../redux/store.ts";
 import redImg from "../assets/images/wintercol.png";
 import PinkImg from "../assets/images/sketcher-1.png";
 import brownImg from "../assets/images/sketcher-4.png";
+import ImageSlider from "../components/imageSlider.tsx";
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductsQuery("");
   if (isError) toast.error("Cannot Fetch the Products");
 
   return (
+    <div className="home-container">
+      <ImageSlider/>
     <section className="home">
       <div className="offer-box">
         <div className="offer-content">
@@ -43,17 +46,14 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-          {data?.products[0].photo ? (
-            <img src={`${server}/${data?.products[0].photo}`} alt="" />
-          ) : (
             <img src={redImg} alt="" />
-          )}
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
           <div className="offer-review-box">
             <span>4.9 | ⭐⭐⭐⭐⭐</span>
             <p>200K+ TotalReview</p>
+            <Link className="linkBtn" to={"/search"}>buy now</Link>
           </div>
         </div>
       </div>
@@ -94,16 +94,10 @@ const Home = () => {
         <div
           className="home-aboutimage"
           style={{
-            background: `linear-gradient(to bottom, ${
-              data?.products[2]?.color || "black"
-            }, white)`,
+            background: `linear-gradient(to bottom, brown, white)`,
           }}
         >
-          {data?.products[2]?.photo ? (
-            <img src={`${server}/${data?.products[2]?.photo}`} alt="" />
-          ) : (
             <img src={brownImg} alt="" />
-          )}
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -192,16 +186,10 @@ const Home = () => {
             <div
               className="image-box"
               style={{
-                background: `linear-gradient(to top, ${
-                  data?.products[1]?.color || "black"
-                }, white)`,
+                background: `linear-gradient(to top, purple, white)`,
               }}
             >
-              {data?.products[1]?.photo ? (
-                <img src={`${server}/${data?.products[1]?.photo}`} alt="" />
-              ) : (
                 <img src={PinkImg} alt="" />
-              )}
             </div>
           </div>
         </div>
@@ -209,6 +197,7 @@ const Home = () => {
 
       <Footer />
     </section>
+    </div>
   );
 };
 
