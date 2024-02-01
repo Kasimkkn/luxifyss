@@ -8,7 +8,6 @@ import { IoIosPricetags } from "react-icons/io";
 import { MdAllInclusive } from "react-icons/md";
 import { TbPremiumRights } from "react-icons/tb";
 import arrowImg from "../assets/images/arrow.png";
-import { server } from "../redux/store.ts";
 import redImg from "../assets/images/wintercol.png";
 import PinkImg from "../assets/images/sketcher-1.png";
 import brownImg from "../assets/images/sketcher-4.png";
