@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 import { useSingleProductDetailsQuery } from "../redux/api/productAPI";
-import { server } from "../redux/store";
 import {  Skeleton} from "../components/loader";
 import toast from "react-hot-toast";
 import { addToCart } from "../redux/reducer/cartReducer";
