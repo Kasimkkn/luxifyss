@@ -26,7 +26,7 @@ const ProductDetails = () => {
       <Skeleton length={20} /> : 
       <div className="product-details" style={{ background:`linear-gradient(to left,${data?.product.color} -51%,#171717 70%` }}>
         <div className="product-images">
-          <img src={`${server}/${data?.product.photo}`} alt="" />
+          <img src={`${data?.product.photo}`} alt="" />
         </div>
         <div className="product-description">
           <h1>{data?.product.name}</h1>

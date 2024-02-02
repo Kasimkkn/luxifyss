@@ -52,7 +52,7 @@ const Orders = () => {
                         style={{
                           borderRadius: "50%",
                         }}
-                        src={`${server}/${item.photo}`}
+                        src={`${item.photo}`}
                         alt={item.name}
                       />
                     </div>
