@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useSelector } from "react-redux";
 import { Skeleton } from "../components/loader";
 import { useMyOrdersQuery } from "../redux/api/orderAPI";
-import { RootState } from "../redux/store";
+import { RootState, server } from "../redux/store";
 import { CustomError } from "../types/api-types";
 import { Link } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Orders = () => {
                         style={{
                           borderRadius: "50%",
                         }}
-                        src={`${item.photo}`}
+                        src={`${server}/${item.photo}`}
                         alt={item.name}
                       />
                     </div>

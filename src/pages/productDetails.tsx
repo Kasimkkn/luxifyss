@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom"
 import { useSingleProductDetailsQuery } from "../redux/api/productAPI";
+import { server } from "../redux/store";
 import {  Skeleton} from "../components/loader";
 import toast from "react-hot-toast";
 import { addToCart } from "../redux/reducer/cartReducer";
@@ -25,7 +26,7 @@ const ProductDetails = () => {
       <Skeleton length={20} /> : 
       <div className="product-details" style={{ background:`linear-gradient(to left,${data?.product.color} -51%,#171717 70%` }}>
         <div className="product-images">
-          <img src={`${data?.product.photo}`} alt="" />
+          <img src={`${server}/${data?.product.photo}`} alt="" />
         </div>
         <div className="product-description">
           <h1>{data?.product.name}</h1>

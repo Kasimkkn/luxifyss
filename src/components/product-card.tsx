@@ -1,4 +1,4 @@
-
+import { server } from "../redux/store";
 import { Link } from "react-router-dom";
 
 type ProductsProps = {
@@ -20,7 +20,7 @@ const ProductCard = ({
   const limitedName = words.slice(0, 3).join(" ");
   return (
     <Link to={`/product/${productId}`} className="product-card" style={{ background:`linear-gradient(to bottom,${color},white` }}>
-      <img src={`${photo}`} alt={name} />
+      <img src={`${server}/${photo}`} alt={name} />
       <p>{limitedName}...</p>
       <span>₹{price}</span>
 
