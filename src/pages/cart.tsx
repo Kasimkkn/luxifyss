@@ -92,7 +92,7 @@ const Cart = () => {
         <p>
           <b>Total: ₹{total}</b>
         </p>
-
+        <p>Size : {cartItems[0].size}</p>
         <input
           type="text"
           placeholder="Coupon Code"
