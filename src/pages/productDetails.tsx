@@ -8,7 +8,7 @@ import { CartItem } from "../types/Types";
 import { useState } from "react";
 
 const ProductDetails = () => {
-  const [size, setsize] = useState(1)
+  const [size, setsize] = useState(5)
   const dispatch = useDispatch();
   const params   = useParams();
   const { data, isLoading,isError } = useSingleProductDetailsQuery(params.id!);

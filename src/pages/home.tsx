@@ -160,9 +160,9 @@ const Home = () => {
                 <div className="description">
                   <span>All-Inclusive Design</span>
                   <p>
-                    Experience versatility never before with our all-inclusive
-                    designs. From casual to formal, adapt to your lifestyle,
-                    ensuring you stay stylish on every occasion.
+                    Elevate your style with our collection of premium quality
+                    shoes. Crafted with precision and comfort in mind, our shoes
+                    redefine fashion and functionality.
                   </p>
                 </div>
               </span>
@@ -173,9 +173,9 @@ const Home = () => {
                 <div className="description">
                   <span>Exclusive Shoe Collection</span>
                   <p>
-                    Indulge in luxury with our exclusive shoe collection. Each
-                    pair is a testament to exquisite craftsmanship, ensuring you
-                    stand out with sophistication and style.
+                    Elevate your style with our collection of premium quality
+                    shoes. Crafted with precision and comfort in mind, our shoes
+                    redefine fashion and functionality.
                   </p>
                 </div>
               </span>

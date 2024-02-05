@@ -12,6 +12,7 @@ import {
 } from "../redux/reducer/cartReducer";
 import { RootState, server } from "../redux/store";
 import { CartItem } from "../types/Types";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const { cartItems, subtotal, tax, total, shippingCharges, discount } =
@@ -22,11 +23,19 @@ const Cart = () => {
   const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
 
   const incrementHandler = (cartItem: CartItem) => {
-    if (cartItem.quantity >= cartItem.stock) return;
+    if (cartItem.quantity >= cartItem.stock) {
+      toast.error('No More Stocks.');
+      return;
+    }
 
     dispatch(addToCart({ ...cartItem, quantity: cartItem.quantity + 1 }));
   };
   const decrementHandler = (cartItem: CartItem) => {
+    if (cartItem.quantity <= 1) {
+      toast.error('Quantity cannot be less than 1.');
+      return;
+    }
+
     if (cartItem.quantity <= 1) return;
 
     dispatch(addToCart({ ...cartItem, quantity: cartItem.quantity - 1 }));
@@ -92,7 +101,7 @@ const Cart = () => {
         <p>
           <b>Total: ₹{total}</b>
         </p>
-        <p>Size : {cartItems[0].size}</p>
+        <p>Size : {cartItems[0]?.size || 0}</p>
         <input
           type="text"
           placeholder="Coupon Code"

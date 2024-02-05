@@ -198,7 +198,7 @@ img:hover {
       height: 100%;
       @include flex(row, center, flex-start, 2rem);
       > .popular-content {
-        @include flex(column, center, flex-start, 1rem);
+        @include flex(column, center, center, 1rem);
         > h2 {
           font-size: 2rem;
           letter-spacing: 1px;
@@ -213,7 +213,7 @@ img:hover {
             display: flex;
             gap: 0.5rem;
             font-size: 1.2rem;
-            @include flex(row, flex-start, center, 1rem);
+            @include flex(row, center, center, 1rem);
 
             > .icons {
               background-color: $color3;
@@ -390,7 +390,7 @@ img:hover {
 }
 
 .product-card {
-  width: 17.75rem;
+  width: 18.75rem;
   padding: 1rem;
   border-radius: 10px;
   @include flex(column, center, center, 4px);
@@ -400,18 +400,18 @@ img:hover {
     object-fit: cover;
   }
   > p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     font-family: "Times New Roman", Times, serif;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $color2;
   }
   > span {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.4rem;
+    font-weight: 200;
     font-family: "Times New Roman", Times, serif;
     letter-spacing: 1px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: $color2;
   }
 }
