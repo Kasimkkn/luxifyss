@@ -180,5 +180,17 @@
         }
       }
     }
+    @media (max-width:500px) {
+      .slider {
+        .slides {
+          &:nth-child(1),
+          &:nth-child(2) {
+            top: initial;
+            background-size: contain;
+            bottom: 0px;
+          }
+        }
+      }
+    }
   }
   

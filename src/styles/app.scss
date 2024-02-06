@@ -50,6 +50,7 @@ a,svg:hover{
 @import "slider";
 @import "home";
 @import "cart";
+@import "about";
 @import "products";
 @import "shipping";
 @import "login";
@@ -83,7 +84,7 @@ a,svg:hover{
 .navbar {
   position: fixed;
   top: 0;
-   background-color: $color4;
+  background-color: $color4;
   left: 0;
   width: 100%;
   @include flex(row, space-between, center, 0rem);
@@ -183,13 +184,16 @@ a,svg:hover{
       top: 100%;
       height: 100vh;
       left: -100px;
+      gap: 2.5rem;
       background-color: $color2;
-      padding: 30px 50px;
-      box-shadow: 2px 0 15px inset rgba(100, 144, 238, 0.5);
-
-      transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+      padding: 2rem 4rem;
+      transition: 1s ease-in-out;
       opacity: 0;
       transform: translateY(-100%);
+
+      >a{
+        font-size: 1.4rem;
+      }
     }
 
     &.active {
