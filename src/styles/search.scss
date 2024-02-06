@@ -49,7 +49,12 @@
         font-size: 1.2rem;
         display: block;
       }
-  
+      >p{
+        @include heading;
+        text-align: center;
+        font-size: 1.9rem;
+        padding: 7rem;
+      }
       .search-product-list {
         @include flex(row, flex-start, flex-start);
         flex-wrap: wrap;

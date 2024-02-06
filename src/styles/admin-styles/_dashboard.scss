@@ -14,6 +14,28 @@
       font-size: 1.2rem;
       opacity: 0.7;
     }
+    > .bell-icon-container{
+      position: relative;
+      >svg{
+        cursor: pointer;
+        &:hover{
+          color: $color3;
+        }
+      }
+      >.notification-panel{
+        z-index: 1000;
+        position: relative;
+        top: 10rem;
+        padding: 3rem;
+        display: flex;
+        border-radius: 10px;
+        background: $color2;
+        >p{
+        @include heading;  
+        color: $color3;
+        }
+      }
+    }
     > img {
       @include square(2rem);
       border-radius: 50%;

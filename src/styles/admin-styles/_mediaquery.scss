@@ -147,3 +147,34 @@
   }
 }
 
+@media screen and (width<= 500px) {
+  .product-search-page {
+    display: block;
+    padding: 0;
+
+    > aside {
+      @include flex(row, space-between, center);
+      flex-wrap: wrap;
+      box-shadow: none;
+      > h2 {
+        display: none;
+      }
+      > div{
+        width: 100%;
+      }
+    }
+    >main > h1{
+      font-size: 1.5rem;
+    }
+    > main > input {
+      width: 100%;
+      border: 1px solid rgba(212, 212, 212, 0.379);
+    }
+  }
+  .product-card{
+    width: 18.75rem;
+  }
+}
+
+
+

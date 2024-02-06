@@ -16,10 +16,7 @@ const Search = () => {
     isError,
     error,
   } = useCategoriesQuery("");
-  const {
-    data: colorsresponse,
-    isLoading: loadingColors,
-  } = useColorsQuery("");
+  const { data: colorsresponse, isLoading: loadingColors } = useColorsQuery("");
 
   const [search, setSearch] = useState("");
   const [sort, setSort] = useState("");
@@ -41,7 +38,6 @@ const Search = () => {
     page,
     price: maxPrice,
   });
-
 
   const isPrevPage = page > 1;
   const isNextPage = page < 4;
@@ -96,10 +92,7 @@ const Search = () => {
 
         <div>
           <h4>Color</h4>
-          <select
-            value={color}
-            onChange={(e) => setColor(e.target.value)}
-          >
+          <select value={color} onChange={(e) => setColor(e.target.value)}>
             <option value="">ALL</option>
             {!loadingColors &&
               colorsresponse?.colors.map((i) => (
@@ -121,7 +114,7 @@ const Search = () => {
 
         {productLoading ? (
           <Skeleton length={10} />
-        ) : (
+        ) : searchedData && searchedData.products.length > 0 ? (
           <div className="search-product-list">
             {searchedData?.products.map((i) => (
               <ProductCard
@@ -134,6 +127,8 @@ const Search = () => {
               />
             ))}
           </div>
+        ) : (
+          <p>No products found.</p>
         )}
 
         {searchedData && searchedData.totalPage > 1 && (

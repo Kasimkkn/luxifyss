@@ -11,11 +11,14 @@ import { Skeleton } from "../../components/loader";
 import { useStatsQuery } from "../../redux/api/dashboardAPI";
 import { RootState } from "../../redux/store";
 import { getLastMonths } from "../../utils/features";
-import userImg from '../../assets/images/userImg.png'
+import userImg from "../../assets/images/userImg.png";
+import { useState } from "react";
 
 const { last6Months: months } = getLastMonths();
 
 const Dashboard = () => {
+  const [showNotifications, setShowNotifications] = useState(false); // State to track notification panel visibility
+
   const { user } = useSelector((state: RootState) => state.userReducer);
 
   const { isLoading, data, isError } = useStatsQuery(user?._id!);
@@ -35,7 +38,17 @@ const Dashboard = () => {
             <div className="bar">
               <BsSearch />
               <input type="text" placeholder="Search for data, users, docs" />
-              <FaRegBell />
+              <div
+                className="bell-icon-container"
+                onClick={() => setShowNotifications(!showNotifications)}
+              >
+                <FaRegBell />
+                {showNotifications && (
+                  <div className="notification-panel">
+                    <p>No Notification</p>
+                  </div>
+                )}
+              </div>
               <img src={user?.photo || userImg} alt="User" />
             </div>
 
