@@ -8,9 +8,6 @@ import { IoIosPricetags } from "react-icons/io";
 import { MdAllInclusive } from "react-icons/md";
 import { TbPremiumRights } from "react-icons/tb";
 import arrowImg from "../assets/images/arrow.png";
-import redImg from "../assets/images/wintercol.png";
-import PinkImg from "../assets/images/sketcher-1.png";
-import brownImg from "../assets/images/sketcher-4.png";
 import ImageSlider from "../components/imageSlider.tsx";
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductsQuery("");
@@ -45,7 +42,7 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-            <img src={redImg} alt="" />
+            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png" alt="" />
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -96,7 +93,7 @@ const Home = () => {
             background: `linear-gradient(to bottom, brown, white)`,
           }}
         >
-            <img src={brownImg} alt="" />
+            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273827/uefsb56yaokbu8qh8p9d.png" alt="" />
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -188,7 +185,7 @@ const Home = () => {
                 background: `linear-gradient(to top, purple, white)`,
               }}
             >
-                <img src={PinkImg} alt="" />
+                <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png" alt="" />
             </div>
           </div>
         </div>
