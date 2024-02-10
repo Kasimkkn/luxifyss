@@ -42,7 +42,7 @@ const Home = () => {
           </div>
         </div>
         <div className="offer-image">
-            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png" alt="" />
+            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png" alt="popular" loading="lazy"/>
           <div className="arrow-box">
             <img src={arrowImg} alt="" />
           </div>
@@ -93,7 +93,7 @@ const Home = () => {
             background: `linear-gradient(to bottom, brown, white)`,
           }}
         >
-            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273827/uefsb56yaokbu8qh8p9d.png" alt="" />
+            <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273827/uefsb56yaokbu8qh8p9d.png" alt="aboutImg" loading="lazy"/>
         </div>
         <div className="home-about-content">
           <h2>About Us</h2>
@@ -185,7 +185,7 @@ const Home = () => {
                 background: `linear-gradient(to top, purple, white)`,
               }}
             >
-                <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png" alt="" />
+                <img src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png" alt="popularImg" loading="lazy" />
             </div>
           </div>
         </div>

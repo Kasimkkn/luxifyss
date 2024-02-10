@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer>
          <div className="box box1">
-            <img src={logo} alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi quasi perferendis saepe ad. Dicta doloremque earum alias id .</p>
+            <img src={logo} alt="" loading="lazy"/>
+            <p>The Premium and Trendy Footwear With Unique Style</p>
          </div>
 
          <div className="box box2">

@@ -19,7 +19,7 @@ const CartItem = ({
 
   return (
     <div className="cart-item">
-      <img src={`${photo}`} alt={name} />
+      <img src={`${photo}`} alt={name} loading="lazy"/>
       <article>
         <Link to={`/product/${productId}`}>{name}</Link>
         <span>₹{price}</span>

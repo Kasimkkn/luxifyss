@@ -54,6 +54,7 @@ const Orders = () => {
                         }}
                         src={`${item.photo}`}
                         alt={item.name}
+                        loading="lazy"
                       />
                     </div>
                     <div className="item-details">

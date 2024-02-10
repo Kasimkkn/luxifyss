@@ -19,7 +19,7 @@ const ProductCard = ({
   const limitedName = words.slice(0, 3).join(" ");
   return (
     <Link to={`/product/${productId}`} className="product-card" style={{ background:`linear-gradient(to bottom,${color},white` }}>
-      <img src={`${photo}`} alt={name} />
+      <img src={`${photo}`} alt={name} loading="lazy" />
       <p>{limitedName}...</p>
       <span>₹{price}</span>
 
