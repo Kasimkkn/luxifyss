@@ -58,6 +58,7 @@ const CheckOutForm = () => {
       elements,
       confirmParams: { return_url: window.location.origin },
       redirect: "if_required",
+      
     });
 
     if (error) {
@@ -77,7 +78,7 @@ const CheckOutForm = () => {
     <div className="checkout-container">
       <form onSubmit={submitHandler}>
         <PaymentElement />
-        <PaymentRequestButtonElement/>
+        <PaymentRequestButtonElement />
         <button type="submit" disabled={isProcessing}>
           {isProcessing ? "Processing..." : "Pay"}
         </button>
