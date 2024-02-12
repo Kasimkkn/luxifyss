@@ -38,6 +38,17 @@ const CheckOutForm = () => {
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
   const [newOrder] = useNewOrderMutation();
 
+  const paymentRequest = stripe && stripe.paymentRequest({
+    country: 'IND',
+    currency: 'inr',
+    total: {
+      label: 'Total',
+      amount: total * 100,
+    },
+    requestPayerName: true,
+    requestPayerEmail: true,
+  });
+
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!stripe || !elements) return;
@@ -78,13 +89,17 @@ const CheckOutForm = () => {
     <div className="checkout-container">
       <form onSubmit={submitHandler}>
         <PaymentElement />
-        <PaymentRequestButtonElement />
+        {paymentRequest && (
+          <PaymentRequestButtonElement options={{paymentRequest}}
+          />
+        )}
         <button type="submit" disabled={isProcessing}>
           {isProcessing ? "Processing..." : "Pay"}
         </button>
       </form>
     </div>
   );
+  
 };
 
 const Checkout = () => {
