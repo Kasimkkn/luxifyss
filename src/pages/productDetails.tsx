@@ -12,7 +12,6 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
   const params   = useParams();
   const { data, isLoading,isError } = useSingleProductDetailsQuery(params.id!);
-  console.log(data?.product)
   const addToCartHandler = (cartItem: CartItem) => {
     if (cartItem.stock < 1) return toast.error("Out of Stock");
     dispatch(addToCart(cartItem));
