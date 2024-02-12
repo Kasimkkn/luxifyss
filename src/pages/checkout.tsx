@@ -39,7 +39,7 @@ const CheckOutForm = () => {
   const [newOrder] = useNewOrderMutation();
 
   const paymentRequest = stripe && stripe.paymentRequest({
-    country: 'IND',
+    country: 'IN',
     currency: 'inr',
     total: {
       label: 'Total',
