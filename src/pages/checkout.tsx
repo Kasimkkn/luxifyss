@@ -54,7 +54,9 @@ import {
         total,
         user: { _id: user?._id!, email: user?.email! },
       };
-  
+      elements.create('payment', {
+        paymentMethodOrder: ['apple_pay', 'google_pay', 'card', 'klarna']
+      });
       const { paymentIntent, error } = await stripe.confirmPayment({
         elements,
         confirmParams: { return_url: window.location.origin },
