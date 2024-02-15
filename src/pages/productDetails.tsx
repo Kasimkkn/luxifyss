@@ -6,9 +6,6 @@ import { addToCart } from "../redux/reducer/cartReducer";
 import { useDispatch } from "react-redux";
 import { CartItem } from "../types/Types";
 import { useState } from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const ProductDetails = () => {
   const [size, setSize] = useState(5);
@@ -24,52 +21,95 @@ const ProductDetails = () => {
 
   if (isError) toast.error("Cannot Fetch the Products");
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
-  return (
-    isLoading ? (
-      <Skeleton length={20} />
-    ) : (
-      <div className="product-details" style={{ background: `linear-gradient(to left,${data?.product.color} -51%,black` }}>
-        <div className="product-images">
-          <Slider {...settings}>
-            {data?.product.photos.map((photo, index) => (
-              <img key={index} src={photo} alt={`${data?.product.name} - ${index}`} />
-            ))}
-          </Slider>
+  return isLoading ? (
+    <Skeleton length={20} />
+  ) : (
+    <div className="product-details">
+      <div className="product-images" >
+          {data?.product.photos.map((photo, index) => (
+            <img
+              key={index}
+              src={photo}
+              alt={`${data?.product.name} - ${index}`}
+            />
+          ))}
+      </div>
+      <div className="product-description">
+        <h1>{data?.product.name}</h1>
+        <h5>{data?.product.category}</h5>
+        <span>
+          <del>1499</del> ₹{data?.product.price}
+        </span>
+        <p>
+          🚚 Free Delivery Across India<br/>
+          💸 Cash on Delivery Option Available<br/>
+          👟 Handmade By Expert Artisans<br/>
+          🗯️ Extra Padding for Greater Comfort<br/>
+          🕶️ Stylish and Elegant Design<br/>
+          💨 Breathable Mesh Upper<br/>
+          ✨ Light Weight and Comfortable
+        </p>
+        <div className="sizes-box">
+          {[5, 6, 7, 8, 9].map((option) => (
+            <span
+              className={`size ${option === size ? 'selected' : ''}`}
+              key={option}
+              onClick={() => setSize(option)}
+            >
+              {option}
+            </span>
+          ))}
         </div>
-        <div className="product-description">
-          <h1>{data?.product.name}</h1>
-          <span><del>1499</del> ₹{data?.product.price}</span>
-          <p>{data?.product.description}</p>
-          <select name="size" value={size} onChange={(e) => setSize(Number(e.target.value))}>
-            <option value="0">Select Size</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-          </select>
-          <h5>{data?.product.category}</h5>
-          <button onClick={() => addToCartHandler({
-            productId: params.id || "",
-            price: data?.product.price || 0,
-            name: data?.product.name || "",
-            photo: data?.product.photos[0] || "", // Use the first photo as the default photo
-            stock: data?.product.stock || 0,
-            size: size || 8,
-            quantity: 1,
-          })}>Add to cart</button>
+        <table >
+          <tbody>
+            <tr>
+              <td>Material</td>
+              <td>Denim / Vegan Leather</td>
+            </tr>
+            <tr>
+              <td>Toe Type</td>
+              <td>Round Toe</td>
+            </tr>
+            <tr>
+              <td>Insole</td>
+              <td>Comfort Insole</td>
+            </tr>
+            <tr>
+              <td>Sole Material</td>
+              <td>Airmax First Sole</td>
+            </tr>
+            <tr>
+              <td>Occasion</td>
+              <td>Everyday</td>
+            </tr>
+            <tr>
+              <td>Warranty</td>
+              <td>3 Months</td>
+            </tr>
+          </tbody>
+        </table>
+        <button
+          onClick={() =>
+            addToCartHandler({
+              productId: params.id || "",
+              price: data?.product.price || 0,
+              name: data?.product.name || "",
+              photo: data?.product.photos[0] || "",
+              stock: data?.product.stock || 0,
+              size: size || 8,
+              quantity: 1,
+            })
+          }
+        >
+          Add to cart
+        </button>
+        <div className="szie-chart">
+          <h2>Size Chart</h2>
+          <img src="https://cdn.shopify.com/s/files/1/0611/3676/5182/products/SizeChart-TheAurous_5b08ca89-8144-4730-88d3-2500d3ea0c52_480x480.png?v=1655890981" alt="" />
         </div>
       </div>
-    )
+    </div>
   );
-}
+};
 
 export default ProductDetails;
