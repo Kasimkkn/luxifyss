@@ -71,7 +71,7 @@ const Home = () => {
               name: string;
               price: number;
               color: string;
-              photo: string;
+              photos: string[];
             }) => (
               <ProductCard
                 key={i._id}
@@ -79,7 +79,7 @@ const Home = () => {
                 name={i.name}
                 price={i.price}
                 color={i?.color}
-                photo={i?.photo}
+                photos={i?.photos}
               />
             )
           )

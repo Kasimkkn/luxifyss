@@ -20,41 +20,52 @@ const Productmanagement = () => {
 
   const { data, isLoading, isError } = useProductDetailsQuery(params.id!);
 
-  const { price, photo, name, description,stock, category,color } = data?.product || {
-    photo: "",
-    description : "",
-    category: "",
-    name: "",
-    color:"",
-    stock: 0,
-    price: 0,
-  };
+  const { price, photos, name, description, stock, category, color } =
+    data?.product || {
+      photos: "",
+      description: "",
+      category: "",
+      name: "",
+      color: "",
+      stock: 0,
+      price: 0,
+    };
 
   const [priceUpdate, setPriceUpdate] = useState<number>(price);
   const [stockUpdate, setStockUpdate] = useState<number>(stock);
   const [nameUpdate, setNameUpdate] = useState<string>(name);
   const [colorUpdate, setcolorUpdate] = useState<string>(color);
-  const [descriptionUpdate, setdescriptionUpdate] = useState<string>(description);
+  const [descriptionUpdate, setdescriptionUpdate] =
+    useState<string>(description);
   const [categoryUpdate, setCategoryUpdate] = useState<string>(category);
-  const [photoUpdate, setPhotoUpdate] = useState<string>("");
-  const [photoFile, setPhotoFile] = useState<File>();
+  const [photoUpdate, setPhotoUpdate] = useState<string[]>([]);
+  const [photoFile, setPhotoFile] = useState<File[]>([]);
 
   const [updateProduct] = useUpdateProductMutation();
   const [deleteProduct] = useDeleteProductMutation();
 
   const changeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const file: File | undefined = e.target.files?.[0];
+    const files: FileList | null = e.target.files;
 
-    const reader: FileReader = new FileReader();
+    if (files && files.length > 0) {
+      const selectedPhotos: File[] = [];
+      const previewUrls: string[] = [];
 
-    if (file) {
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        if (typeof reader.result === "string") {
-          setPhotoUpdate(reader.result);
-          setPhotoFile(file);
-        }
-      };
+      for (let i = 0; i < files.length; i++) {
+        selectedPhotos.push(files[i]);
+
+        const reader: FileReader = new FileReader();
+        reader.onloadend = () => {
+          if (typeof reader.result === "string") {
+            previewUrls.push(reader.result);
+          }
+          if (previewUrls.length === files.length) {
+            setPhotoUpdate(previewUrls); // Update photoUpdate with the array of data URLs
+          }
+        };
+        reader.readAsDataURL(files[i]);
+      }
+      setPhotoFile(selectedPhotos);
     }
   };
 
@@ -68,7 +79,12 @@ const Productmanagement = () => {
     if (priceUpdate) formData.set("price", priceUpdate.toString());
     if (stockUpdate !== undefined)
       formData.set("stock", stockUpdate.toString());
-    if (photoFile) formData.set("photo", photoFile);
+    if (photoFile) {
+      for (let i = 0; i < photoFile.length; i++) {
+        formData.append("photos", photoFile[i]);
+      }
+    }
+
     if (categoryUpdate) formData.set("category", categoryUpdate);
     if (colorUpdate) formData.set("color", colorUpdate);
 
@@ -113,7 +129,13 @@ const Productmanagement = () => {
           <>
             <section>
               <strong>ID - {data?.product._id}</strong>
-              <img src={`${photo}`} alt="Product" />
+              {Array.isArray(photos) && photos.length > 0 && (
+                <div className="existing-box">
+                  {photos.map((url, index) => (
+                    <img key={index} src={url} alt={`Product ${index}`} />
+                  ))}
+                </div>
+              )}
               <p>{name}</p>
               {stock > 0 ? (
                 <span className="green">{stock} Available</span>
@@ -186,10 +208,17 @@ const Productmanagement = () => {
 
                 <div>
                   <label>Photo</label>
-                  <input type="file" onChange={changeImageHandler} />
+                  <input type="file" onChange={changeImageHandler} multiple />
                 </div>
 
-                {photoUpdate && <img src={photoUpdate} alt="New Image" />}
+                {photoUpdate && (
+                  <div className="preview-box">
+                    {photoUpdate.map((url, index) => (
+                      <img key={index} src={url} alt={`Preview ${index}`} />
+                    ))}
+                  </div>
+                )}
+
                 <button type="submit">Update</button>
               </form>
             </article>

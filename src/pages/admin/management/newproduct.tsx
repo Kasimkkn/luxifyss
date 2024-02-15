@@ -15,32 +15,43 @@ const NewProduct = () => {
   const [price, setPrice] = useState<number>(1000);
   const [color, setColor] = useState<string>("");
   const [stock, setStock] = useState<number>(1);
-  const [photoPrev, setPhotoPrev] = useState<string>("");
-  const [photo, setPhoto] = useState<File>();
+  const [photoPrev, setPhotoPrev] = useState<string[]>([]);
+  const [photos, setPhotos] = useState<File[]>([]);
 
   const [newProduct] = useNewProductMutation();
   const navigate = useNavigate();
 
   const changeImageHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const file: File | undefined = e.target.files?.[0];
-
-    const reader: FileReader = new FileReader();
-
-    if (file) {
-      reader.readAsDataURL(file);
-      reader.onloadend = () => {
-        if (typeof reader.result === "string") {
-          setPhotoPrev(reader.result);
-          setPhoto(file);
-        }
-      };
+    const files: FileList | null = e.target.files;
+  
+    if (files && files.length > 0) {
+      const selectedPhotos: File[] = [];
+      const previewUrls: string[] = []; 
+  
+      for (let i = 0; i < files.length; i++) {
+        selectedPhotos.push(files[i]);
+  
+        // Read data URL for preview
+        const reader: FileReader = new FileReader();
+        reader.onloadend = () => {
+          if (typeof reader.result === "string") {
+            previewUrls.push(reader.result);
+          }
+          if (previewUrls.length === files.length) {
+            setPhotoPrev(previewUrls);
+          }
+        };
+        reader.readAsDataURL(files[i]);
+      }
+      setPhotos(selectedPhotos);
     }
   };
+  
 
   const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!name || !price || stock < 0 || !category || !photo) return;
+    if (!name || !price || stock < 0 || !category || !photos) return;
 
     const formData = new FormData();
 
@@ -48,10 +59,13 @@ const NewProduct = () => {
     formData.set("description", description);
     formData.set("price", price.toString());
     formData.set("stock", stock.toString());
-    formData.set("photo", photo);
+    //formData.set("photos", photos);
     formData.set("category", category);
     formData.set("color", color);
 
+    for (let i = 0; i < photos.length; i++) {
+      formData.append("photos", photos[i]);
+    }
     const res = await newProduct({ id: user?._id!, formData });
 
     responseToast(res, navigate, "/admin/product");
@@ -121,10 +135,25 @@ const NewProduct = () => {
             </div>
 
             <div>
-              <input required type="file" onChange={changeImageHandler} />
+              <input
+                required
+                type="file"
+                onChange={changeImageHandler}
+                multiple
+              />
+            </div>
+            <div className="preview-box">
+            {photos.map((photo, index) => (
+              
+                 <img
+                key={index}
+                src={photoPrev[index]}
+                alt={`Preview ${photo}`}
+              />
+            ))}
+            
             </div>
 
-            {photoPrev && <img src={photoPrev} alt="New Image" />}
             <button type="submit">Create</button>
           </form>
         </article>

@@ -12,7 +12,7 @@ import { RootState} from "../../redux/store";
 import { CustomError } from "../../types/api-types";
 
 interface DataType {
-  photo: ReactElement;
+  photos: ReactElement | null;
   name: string;
   price: number;
   stock: number;
@@ -21,8 +21,8 @@ interface DataType {
 
 const columns: Column<DataType>[] = [
   {
-    Header: "Photo",
-    accessor: "photo",
+    Header: "Photos",
+    accessor: "photos",
   },
   {
     Header: "Name",
@@ -55,17 +55,21 @@ const Products = () => {
   }
 
   useEffect(() => {
-    if (data)
+    if (data) {
+      
+      console.log(data.products);
       setRows(
-        data.products.map((i) => ({
-          photo: <img src={`${i.photo}`} />,
-          name: i.name,
-          price: i.price,
-          stock: i.stock,
-          action: <Link to={`/admin/product/${i._id}`}>Manage</Link>,
+        data.products.map((product) => ({
+          photos: product.photos && product.photos.length > 0 ? <img src={product.photos[0]} /> : null,
+          name: product.name,
+          price: product.price,
+          stock: product.stock,
+          action: <Link to={`/admin/product/${product._id}`}>Manage</Link>,
         }))
       );
+    }
   }, [data]);
+  
 
   const Table = TableHOC<DataType>(
     columns,

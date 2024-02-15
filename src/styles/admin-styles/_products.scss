@@ -61,7 +61,15 @@
     > strong {
       font-weight: 300;
     }
-
+    > .existing-box{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      >img{
+        width: 10vw;
+      }
+    }
     > span {
       position: absolute;
       right: 2rem;
@@ -119,6 +127,14 @@
           );
           border-radius: 5px;
         }
+      }
+      >.preview-box{
+  display: flex;
+  position: relative;
+  width: 100%;
+      >img{
+        width: 60px;
+      }
       }
 
       > button {

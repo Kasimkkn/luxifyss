@@ -19,8 +19,6 @@ const Orders = () => {
     toast.error(err.data.message);
   }
 
-  // const words = order.;
-  // const limitedName = words.slice(0, 3).join(" ");
   useEffect(() => {
     if (data) {
       setCards(

@@ -15,7 +15,7 @@ export type Product = {
   description: string | "no description";
   stock: number;
   category: string;
-  photo: string;
+  photos: string[];
   _id: string;
 };
 

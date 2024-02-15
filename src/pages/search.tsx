@@ -123,7 +123,7 @@ const Search = () => {
                 name={i.name}
                 color={i.color}
                 price={i.price}
-                photo={i.photo}
+                photos={i.photos}
               />
             ))}
           </div>
