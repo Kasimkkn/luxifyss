@@ -175,7 +175,8 @@ a,svg:hover{
     }
   }
   @media (max-width: 800px) {
-    
+    @include flex(row, flex-start, center, 3rem);
+    padding: 15px 25px;
     ul {
       display: none;
       position: absolute;
