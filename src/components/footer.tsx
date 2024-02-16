@@ -1,21 +1,12 @@
 
 import { Link } from "react-router-dom";
-import logo from '../assets/images/logo1.png'
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer>
          <div className="box box1">
-            <img src={logo} alt="" loading="lazy"/>
+            <h2>LUXIFY</h2>
             <p>The Premium and Trendy Footwear With Unique Style</p>
-         </div>
-
-         <div className="box box2">
-            <p>News Letter</p>
-            <div>
-               <input type="text" placeholder='subscribe now..' />
-               <button>subscribe</button>
-            </div>
          </div>
 
          <div className="box box3">

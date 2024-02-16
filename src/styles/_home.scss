@@ -33,7 +33,7 @@ img:hover {
       > p {
         word-wrap: break-word;
         font-size: 1rem;
-        font-weight: 400;
+        font-weight: 300;
       }
       > .linkBtn {
         border: 1px solid rgba(0, 0, 0, 0.4);
@@ -105,7 +105,7 @@ img:hover {
     gap: 2rem;
 
     > .home-aboutimage {
-      // width: 20rem;
+      width: 20rem;
       border-radius: 20px;
       > img {
         object-fit: cover;
@@ -116,11 +116,11 @@ img:hover {
       width: 88%;
       @include flex(column, center, flex-start, 1.5rem);
       > h2 {
-        word-wrap: break-word;
-        font-size: 3rem;
-        letter-spacing: 3px;
-        font-weight: 300;
-        color: $color3;
+        font-size: 2.4rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+    color: #ce7f7f;
+    word-wrap: break-word;
       }
       > p {
         word-wrap: break-word;
@@ -129,7 +129,7 @@ img:hover {
       }
 
       .home-about-box-popularity {
-        @include flex(column, flex-start, center, 1rem);
+        @include flex(column, flex-start, flex-start, 1rem);
 
         > span {
           display: flex;
@@ -199,9 +199,10 @@ img:hover {
       height: 100%;
       @include flex(row, center, flex-start, 2rem);
       > .popular-content {
-        @include flex(column, center, center, 1rem);
+        @include flex(column, center, center, 1.5rem);
         > h2 {
-          font-size: 2rem;
+          align-self: flex-start;
+          font-size: 2.4rem;
           letter-spacing: 1px;
           font-weight: 300;
           color: $color3;
@@ -214,7 +215,7 @@ img:hover {
             display: flex;
             gap: 0.5rem;
             font-size: 1.2rem;
-            @include flex(row, center, center, 1rem);
+            @include flex(row, center, flex-start, 1rem);
 
             > .icons {
               background-color: $color3;
@@ -232,12 +233,12 @@ img:hover {
               color: $color1;
               font-weight: 400;
               > span {
-                font-size: 1.2rem;
+                font-size: 1.3rem;
                 color: $color3;
                 font-weight: 600;
               }
               > p {
-                font-size: 0.9rem;
+                font-size: 1rem;
                 font-weight: 300;
               }
             }
@@ -279,53 +280,20 @@ img:hover {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
 
-        img {
-          width: 100px;
-          object-position: center;
-          object-fit: cover;
+        h2{
+          @include heading();
+          font-size: 1.4rem;
+          color: $color3;
         }
 
         p {
           width: 200px;
           font-size: 15px;
           text-transform: capitalize;
-          font-style: italic;
           text-wrap: wrap;
-        }
-      }
-
-      &2 {
-        gap: 20px;
-
-        p {
-          text-transform: capitalize;
-          font-weight: 700;
-          font-size: 27px;
-        }
-
-        div {
-          display: flex;
-          gap: 3px;
-
-          input {
-            border: 1px solid rgba(0, 0, 0, 0.4);
-            padding: 7px 10px;
-            border-radius: 15px;
-          }
-
-          button {
-            border: 1px solid rgba(0, 0, 0, 0.4);
-            padding: 7px 10px;
-            border-radius: 15px;
-            background-color: $color3;
-            color: $color2;
-
-            &:hover {
-              color: $color2;
-              background: $color1;
-            }
-          }
+          font-weight: 200;
         }
       }
 
@@ -346,6 +314,7 @@ img:hover {
             color: $color3;
             font-size: 25px;
             &:hover {
+              cursor: pointer;
               color: $color1;
             }
           }

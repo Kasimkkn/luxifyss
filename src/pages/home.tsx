@@ -144,8 +144,7 @@ const Home = () => {
           <div className="popular-products">
             <div className="popular-content">
               <h2>
-                Discover the Unmatched Features of Our Latest & Trending
-                Products
+                Latest & Trending Products
               </h2>
               <div className="popular-box">
                 <span>
