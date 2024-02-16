@@ -117,6 +117,14 @@
           left: 0;
           top: -1.5rem;
         }
+        > input[type=file]::-webkit-file-upload-button{
+          background-color: $color2;
+          padding: 0.4rem;
+          border:none;
+          margin: 0 10px;
+          border-radius: 10px;
+          color: $color1;
+        }
 
         > input {
           @include inputStyle(

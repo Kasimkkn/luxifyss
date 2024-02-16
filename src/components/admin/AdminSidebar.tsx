@@ -161,14 +161,14 @@ const Li = ({ url, text, location, Icon }: LiProps) => (
   <li
     style={{
       backgroundColor: location.pathname.includes(url)
-        ? "rgb(255 190 131)"
+        ? "#ce7f7f"
         : "white",
     }}
   >
     <Link
       to={url}
       style={{
-        color: location.pathname.includes(url) ? "rgb(22 61 59)" : "black",
+        color: location.pathname.includes(url) ? "white" : "black",
       }}
     >
       <Icon />
