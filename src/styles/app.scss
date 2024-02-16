@@ -171,11 +171,14 @@ a,svg:hover{
     >svg{
 
       font-size: 22px;
-      color: $color3;
+      color: $color1;
+      &:hover{
+        color: $color3;
+      }
     }
   }
   @media (max-width: 800px) {
-    @include flex(row, flex-start, center, 3rem);
+    @include flex(row, space-between, center, 4rem);
     padding: 15px 25px;
     ul {
       display: none;

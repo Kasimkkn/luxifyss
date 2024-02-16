@@ -57,7 +57,6 @@ const Products = () => {
   useEffect(() => {
     if (data) {
       
-      console.log(data.products);
       setRows(
         data.products.map((product) => ({
           photos: product.photos && product.photos.length > 0 ? <img src={product.photos[0]} /> : null,

@@ -2,23 +2,15 @@
     margin: 6rem 2rem;
     @include flex(row, flex-start, flex-start,4rem);
     border-radius: 15px;
-    padding: 2rem;
+    padding: 3rem;
     > .product-images{
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        width: 40%;
+        width: 100%;
         height: max-content;
         ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: $color2;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: $color3;
+            display: none;
         }
         >img{
             background: linear-gradient(to bottom,$color2,$color1);
@@ -29,15 +21,9 @@
                 transition: all 0.5s;
             }
         }
-        // >img:nth-child(2){
-        //     background: linear-gradient(to right,$color2,$color1);
-        // }
-        // >img:nth-child(3){
-        //     background: linear-gradient(to left,$color2,$color1);
-        // }
     }
     > .product-description{
-        @include flex(column, center, flex-start, 1.6rem);
+        @include flex(column, center, flex-start, 1rem);
 
         > h1{
             word-wrap: break-word;
@@ -47,7 +33,7 @@
 
         }
         > span{
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 400;
             color: $color3;
             >del {
@@ -57,14 +43,14 @@
             }
         }
         > p{
-            font-size:  1.3rem;
+            font-size:  1.5rem;
             word-wrap: break-word;
             font-weight: 200;
             text-transform: capitalize;
         }
         > h5{
-            font-size:  1.1rem;
-            color: $color1;
+            font-size:  1.4rem;
+            color: $color3;
             word-wrap: break-word;
             font-weight: 300;
             text-transform: capitalize;
@@ -84,7 +70,7 @@
               }
         }
         >table{
-            width: 100%;
+            width: max-content;
             >tbody{
                 >tr{
                     >td{
@@ -113,7 +99,6 @@
             }
           }
         > .szie-chart{
-            width: 100%;
             img{
                 width: 100%;
                 &:hover{
@@ -154,8 +139,14 @@
         >.product-images{
             width: 100%;
             flex-direction: row;
-            overflow: scroll;
-
+            overflow-x: scroll; 
+            overflow-y: hidden; 
+            scrollbar-width: none; 
+            -ms-overflow-style: none; 
+        }
+        
+        > .product-images::-webkit-scrollbar {
+            display: none;
         }
         >.product-description{
             >h1{
@@ -163,7 +154,7 @@
                 letter-spacing: 1px;
             }
             >p{
-                font-size: 1rem;
+                font-size: 1.4rem;
             }
             >table{
                 >tbody{
@@ -186,13 +177,13 @@
     .product-details{
         >.product-description{
             >h1{
-                font-size: 1rem;
+                font-size: 1.3rem;
             }
             >span{
                 font-size: 1.2rem;
             }
             >p{
-                font-size: 0.6rem;
+                font-size: 1rem;
             }
         }
     }

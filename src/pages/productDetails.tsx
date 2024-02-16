@@ -40,6 +40,22 @@ const ProductDetails = () => {
         <span>
           <del>1499</del> ₹{data?.product.price}
         </span>
+        
+        <button
+          onClick={() =>
+            addToCartHandler({
+              productId: params.id || "",
+              price: data?.product.price || 0,
+              name: data?.product.name || "",
+              photo: data?.product.photos[0] || "",
+              stock: data?.product.stock || 0,
+              size: size || 8,
+              quantity: 1,
+            })
+          }
+        >
+          Add to cart
+        </button>
         <p>
           🚚 Free Delivery Across India<br/>
           💸 Cash on Delivery Option Available<br/>
@@ -50,7 +66,7 @@ const ProductDetails = () => {
           ✨ Light Weight and Comfortable
         </p>
         <div className="sizes-box">
-          {[5, 6, 7, 8, 9].map((option) => (
+          {[6, 7, 8, 9,10].map((option) => (
             <span
               className={`size ${option === size ? 'selected' : ''}`}
               key={option}
@@ -88,21 +104,6 @@ const ProductDetails = () => {
             </tr>
           </tbody>
         </table>
-        <button
-          onClick={() =>
-            addToCartHandler({
-              productId: params.id || "",
-              price: data?.product.price || 0,
-              name: data?.product.name || "",
-              photo: data?.product.photos[0] || "",
-              stock: data?.product.stock || 0,
-              size: size || 8,
-              quantity: 1,
-            })
-          }
-        >
-          Add to cart
-        </button>
         <div className="szie-chart">
           <h2>Size Chart</h2>
           <img src="https://cdn.shopify.com/s/files/1/0611/3676/5182/products/SizeChart-TheAurous_5b08ca89-8144-4730-88d3-2500d3ea0c52_480x480.png?v=1655890981" alt="" />
