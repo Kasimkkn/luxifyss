@@ -66,10 +66,10 @@ const Search = () => {
         <div>
           <h4>Max Price: {maxPrice || ""}</h4>
           <div>
-            <span onClick={() => setMaxPrice(0)}>0 - 1000</span>
-            <span onClick={() => setMaxPrice(1000)}>1000 - 2000</span>
-            <span onClick={() => setMaxPrice(2000)}>2000 - 3000</span>
-            <span onClick={() => setMaxPrice(3000)}>3000 and above</span>
+            <span onClick={() => setMaxPrice(1000)}>0 - 1000</span>
+            <span onClick={() => setMaxPrice(2000)}>1000 - 2000</span>
+            <span onClick={() => setMaxPrice(3000)}>2000 - 3000</span>
+            <span onClick={() => setMaxPrice(1000000)}>3000 and above</span>
           </div>
         </div>
 

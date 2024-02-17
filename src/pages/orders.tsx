@@ -37,7 +37,6 @@ const Orders = () => {
                 <p>Grand Total: {order.total}</p>
               </div>
               <div className="order-items">
-                <h3>Order Items:</h3>
                 {order.orderItems.map((item) => (
                   <div className="item" key={item.productId}>
                     <div
