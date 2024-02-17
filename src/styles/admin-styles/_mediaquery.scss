@@ -153,7 +153,6 @@
 
 @media screen and (width<= 500px) {
   .product-search-page {
-    display: block;
     padding: 0;
 
     > aside {
@@ -176,7 +175,7 @@
     }
   }
   .product-card{
-    width: 18.75rem;
+    width: 100%;
   }
 }
 

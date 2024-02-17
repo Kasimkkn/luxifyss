@@ -66,9 +66,10 @@
   
       > input {
         @include inputStyle(50%);
+        border: 1px solid #454444;
         color: $color3;
         border-radius: 5px;
-        margin: 1rem;
+        margin: 1rem 0;
         font-weight: 200;
         font-size: 1.2rem;
         display: block;
