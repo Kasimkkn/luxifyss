@@ -65,13 +65,12 @@ const Search = () => {
 
         <div>
           <h4>Max Price: {maxPrice || ""}</h4>
-          <input
-            type="range"
-            min={100}
-            max={25000}
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(Number(e.target.value))}
-          />
+          <div>
+            <span onClick={() => setMaxPrice(0)}>0 - 1000</span>
+            <span onClick={() => setMaxPrice(1000)}>1000 - 2000</span>
+            <span onClick={() => setMaxPrice(2000)}>2000 - 3000</span>
+            <span onClick={() => setMaxPrice(3000)}>3000 and above</span>
+          </div>
         </div>
 
         <div>

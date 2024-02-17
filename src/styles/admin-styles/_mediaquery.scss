@@ -80,13 +80,17 @@
   }
 
   .product-search-page {
-    display: block;
+    flex-direction: column;
     padding: 0;
 
     > aside {
+      max-width: 100%;
       @include flex(row, space-between, center);
       flex-wrap: wrap;
       box-shadow: none;
+      >div{
+        width: 100%;
+      }
       > h2 {
         display: none;
       }

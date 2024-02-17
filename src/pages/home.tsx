@@ -108,8 +108,7 @@ const Home = () => {
           <div className="home-about-content">
             <h2>About Us</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              molestiae iste natus veniam.Lorem ipsum dolor
+            Redefining fashion and functionality with our exclusive collection of premium quality shoes for trendsetters like you.
             </p>
             <div className="home-about-box-popularity">
               <span>

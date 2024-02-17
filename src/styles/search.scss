@@ -1,11 +1,11 @@
 .product-search-page {
     margin-top: 55px;
     padding: 2rem;
-    @include flex(row, flex-start, stretch, 2rem);
+    @include flex(row, flex-start, flex-start, 2rem);
     min-height: calc(100vh - 6.5vh);
   
     > aside {
-      min-width: 20rem;
+      max-width: 20rem;
       background-color: $color2;
       padding: 2rem;
       @include flex(column, flex-start, stretch, 1.5rem);
@@ -15,6 +15,9 @@
       }
   
       > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         >h4{
           @include heading;
           color: $color3;
@@ -29,6 +32,27 @@
           );
           border-radius: 10px;
           margin: 0.5rem;
+        }
+      }
+      >div{
+        >div{
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+          
+          >span{
+             background-color: $color3;
+             padding: 0.5rem 1.8rem; 
+             border: none;
+             border-radius: 10px;
+
+             &:hover{
+               cursor: pointer;
+               background-color: $color1;
+               color: $color2;
+             }
+          }
+
         }
       }
     }
@@ -63,7 +87,6 @@
 
         
       }
-      // $p: 0.5rem 1rem, $bg, $color
       article {
         @include flex;
         > button {
