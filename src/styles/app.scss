@@ -10,7 +10,6 @@
   box-sizing: border-box;
 }
 
-
 ::-webkit-scrollbar {
   width: 0.2rem;
   background-color: #ccc;
@@ -26,12 +25,16 @@ body {
   background-color: $color2;
 }
 
-a,h1,span,h6,p {
+a,
+h1,
+span,
+h6,
+p {
   text-decoration: none;
   color: $color1;
-
 }
-a,svg:hover{
+a,
+svg:hover {
   color: $color3;
 }
 .red {
@@ -117,14 +120,14 @@ a,svg:hover{
     height: 50px;
     width: 70px;
 
-    >h2{
-      @include flex(row,center,center,0rem);
+    > h2 {
+      @include flex(row, center, center, 0rem);
       font-size: 1.7rem;
       font-weight: 400;
       letter-spacing: 3px;
       text-align: center;
 
-      >a{
+      > a {
         margin-top: 4px;
         color: $color3;
       }
@@ -168,11 +171,10 @@ a,svg:hover{
   .navbar-toggle {
     display: none;
     cursor: pointer;
-    >svg{
-
+    > svg {
       font-size: 22px;
       color: $color1;
-      &:hover{
+      &:hover {
         color: $color3;
       }
     }
@@ -193,7 +195,7 @@ a,svg:hover{
       opacity: 0;
       transform: translateY(-100%);
 
-      >a{
+      > a {
         font-size: 1.4rem;
       }
     }
@@ -289,8 +291,7 @@ a,svg:hover{
 
   th,
   td {
-    
-  color: $color2 !important;
+    color: $color2 !important;
     padding: 8px;
     text-align: left;
     vertical-align: middle;
@@ -301,11 +302,11 @@ a,svg:hover{
     font-size: 1.4rem;
     font-weight: 400;
     padding: 2rem 1rem;
-    >span{
-      >svg{
+    > span {
+      > svg {
         color: $color2;
 
-        &:hover{
+        &:hover {
           color: $color3;
         }
       }
@@ -341,7 +342,7 @@ a,svg:hover{
         font-size: 1.1rem;
         border: none;
         outline: none;
-        
+
         background-color: transparent;
         color: $color2;
         cursor: pointer;
@@ -365,7 +366,7 @@ a,svg:hover{
 .table-pagination {
   @include flex;
   padding: 2rem;
-  >span{
+  > span {
     color: $color2;
   }
   > button {
@@ -420,12 +421,12 @@ a,svg:hover{
   @include flex;
 
   > div {
-    @include square(10rem);
+    @include square(8rem);
     border-radius: 50%;
-    border-top: 1rem solid rgb(43, 43, 43);
-    border-left: 1rem solid rgb(43, 43, 43);
-    border-right: 1rem solid #fff;
-    border-bottom: 1rem solid #fff;
+    border-top: 0.8rem solid rgb(43, 43, 43);
+    border-left: 0.8rem solid rgb(43, 43, 43);
+    border-right: 0.8rem solid #fff;
+    border-bottom: 0.8rem solid #fff;
     animation: loading-animation 0.5s linear infinite;
   }
 }
@@ -467,5 +468,17 @@ a,svg:hover{
 
   100% {
     opacity: 0.6;
+  }
+}
+
+@media (max-width: 600px) {
+  .loader {
+    > div {
+      @include square(4rem);
+      border-top: 0.3rem solid rgb(43, 43, 43);
+      border-left: 0.3rem solid rgb(43, 43, 43);
+      border-right: 0.3rem solid #fff;
+      border-bottom: 0.3rem solid #fff;
+    }
   }
 }
