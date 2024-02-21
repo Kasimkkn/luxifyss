@@ -28,6 +28,13 @@ const ImageSlider = () => {
   return (
     <>
       <div className="silder-container">
+      <h1>
+          <span>
+          New Arrivals</span>
+          <Link to="/search" className="findmore">
+            More
+          </Link>
+        </h1>
         <div className="slider">
           <div
             className="slides"
