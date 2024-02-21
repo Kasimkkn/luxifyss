@@ -22,8 +22,7 @@ const Home = () => {
               Winter <span>Collection</span>
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
-              molestiae iste natus veniam. Corrupti, inventore.
+            Step into the season with our winter collection shoes, where warmth meets style in every step.
             </p>
             <Link className="linkBtn" to={"/search"}>
               Buy now
@@ -106,8 +105,11 @@ const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="newArrivals">
         <h1>
-          New Arrivals
+          <span>
+          New Arrivals</span>
           <Link to="/search" className="findmore">
             More
           </Link>
@@ -137,6 +139,7 @@ const Home = () => {
             )
           )}
         </main>
+        </div>
         <ImageSlider />   
         <div className="popular-products-box">
           <div className="popular-products">
