@@ -15,7 +15,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <ImageSlider />
       <section className="home">
         <div className="offer-box">
           <div className="offer-content">
@@ -60,38 +59,7 @@ const Home = () => {
           </div>
         </div>
 
-        <h1>
-          New Arrivals
-          <Link to="/search" className="findmore">
-            More
-          </Link>
-        </h1>
-
-        <main>
-          {isLoading ? (
-            <Skeleton width="100vw" length={7} />
-          ) : (
-            data?.products.map(
-              (i: {
-                _id: string;
-                name: string;
-                price: number;
-                color: string;
-                photos: string[];
-              }) => (
-                <ProductCard
-                  key={i._id}
-                  productId={i._id}
-                  name={i.name}
-                  price={i.price}
-                  color={i?.color}
-                  photos={i?.photos}
-                />
-              )
-            )
-          )}
-        </main>
-
+        
         <div className="home-about-box">
           <div
             className="home-aboutimage"
@@ -138,7 +106,38 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <h1>
+          New Arrivals
+          <Link to="/search" className="findmore">
+            More
+          </Link>
+        </h1>
 
+        <main>
+          {isLoading ? (
+            <Skeleton width="100vw" length={7} />
+          ) : (
+            data?.products.map(
+              (i: {
+                _id: string;
+                name: string;
+                price: number;
+                color: string;
+                photos: string[];
+              }) => (
+                <ProductCard
+                  key={i._id}
+                  productId={i._id}
+                  name={i.name}
+                  price={i.price}
+                  color={i?.color}
+                  photos={i?.photos}
+                />
+              )
+            )
+          )}
+        </main>
+        <ImageSlider />   
         <div className="popular-products-box">
           <div className="popular-products">
             <div className="popular-content">
