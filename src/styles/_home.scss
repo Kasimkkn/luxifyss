@@ -4,8 +4,8 @@ img:hover {
   transition: all 0.5s;
 }
 
-.home-container{
-  padding-top: 3rem;
+.home-container {
+  padding-top: 6rem;
   position: relative;
 }
 .home {
@@ -68,7 +68,7 @@ img:hover {
     }
 
     > .offer-image {
-      background-image: url("../assets/images/nike1.jpg");
+      background-image: url("../assets/images/nike1.png");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -115,11 +115,11 @@ img:hover {
       width: 88%;
       @include flex(column, center, flex-start, 1.5rem);
       > h2 {
-        font-size: 2.4rem;
-    letter-spacing: 1px;
-    font-weight: 700;
-    color: $color3;
-    word-wrap: break-word;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: $color3;
+        word-wrap: break-word;
       }
       > p {
         word-wrap: break-word;
@@ -153,7 +153,7 @@ img:hover {
             > span {
               font-size: 1.3rem;
               color: $color3;
-              font-weight: 600;
+              font-weight: 200;
             }
             > p {
               font-size: 1rem;
@@ -165,53 +165,53 @@ img:hover {
     }
   }
 
-  .newArrivals{
+  .newArrivals {
     @include flex(column, space-between, center, 0.5rem);
-  
-  > h1 {
-    @include heading(1px);
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    @include flex(row, space-between, center);
-    padding: 0rem 4rem;
-    width: 100%;
-    >span{
-      color: $color3;
-      font-weight: 500;
-      letter-spacing: 1px;
-      font-size: 2rem;
+
+    > h1 {
+      @include heading(1px);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      @include flex(row, space-between, center);
+      padding: 0rem 4rem;
+      width: 100%;
+      > span {
+        color: $color3;
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 2rem;
+      }
+    }
+
+    .findmore {
+      font-size: 1rem;
+    }
+
+    > main {
+      margin-bottom: 2rem;
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      display: flex;
+      gap: 1rem;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
   }
-
-  .findmore {
-    font-size: 1rem;
-  }
-
-  > main {
-    margin-bottom: 2rem;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    display: flex;
-    gap: 1rem;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-  }
-}
-  > .popular-products-box {
-    margin-top: 5rem 0;
-    > .popular-products {
-      height: 100%;
+ .popular-products {
+      background-color: #2F2E3E;
+      padding: 2rem;
+      margin: 3rem 5rem;
       @include flex(row, center, flex-start, 2rem);
       > .popular-content {
         @include flex(column, center, center, 1.5rem);
         > h2 {
           align-self: flex-start;
-          font-size: 2.4rem;
+          font-size: 1.8rem;
           letter-spacing: 1px;
           font-weight: 500;
           color: $color3;
@@ -244,7 +244,7 @@ img:hover {
               > span {
                 font-size: 1.3rem;
                 color: $color3;
-                font-weight: 600;
+                font-weight: 200;
               }
               > p {
                 font-size: 1rem;
@@ -266,7 +266,6 @@ img:hover {
         }
       }
     }
-  }
 
   footer {
     border-top: 1px solid #434343;
@@ -292,7 +291,7 @@ img:hover {
         justify-content: center;
         gap: 1rem;
 
-        h2{
+        h2 {
           @include heading();
           font-size: 1.4rem;
           color: $color3;
@@ -371,32 +370,74 @@ img:hover {
 
 .product-card {
   width: 18.75rem;
-  padding: 1rem;
-  border-radius: 10px;
+  border-radius: 20px;
   @include flex(column, center, center, 4px);
-
-  img {
+  background-color: #2F2E3E;
+  >.image-div{
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    img {
+      width: 80%;
+      object-fit: cover;
+    }
+  }
+  >.content-div{
+    padding: 1rem 0.4rem;
     width: 100%;
-    object-fit: cover;
-  }
-  > p {
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-family: "Times New Roman", Times, serif;
-    text-transform: capitalize;
-    color: $color2;
-  }
-  > span {
-    font-size: 1.4rem;
-    font-weight: 200;
-    font-family: "Times New Roman", Times, serif;
-    letter-spacing: 1px;
-    text-transform: capitalize;
-    color: $color2;
+    >.content1{
+      display: flex;
+    justify-content: space-between;
+    padding: 0.1rem 1rem; 
+    > p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      text-transform: capitalize;
+      color: $color1;
+    }
+    > span {
+      font-size: 1rem;
+      font-weight: 200;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      color: $color1;
+    }
+    }
+    >.content2{
+      display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.1rem 1rem; 
+    align-items: center;
+      
+    p {
+      font-size: 0.8rem;
+      font-weight: 200;
+      align-self: flex-start;
+      text-transform: capitalize;
+      color: $color1;
+    }
+    button{
+      padding: 0.7rem 1rem;
+      width: 100%;
+      border-radius: 20px;
+      border: none;
+      background-color: $color3;
+      color: $color2;
+      &:hover{
+        cursor: pointer;
+        background-color: $color2;
+        color: $color3;
+      }
+    }
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
+  .home-container{
+    padding-top: 0rem;
+  }
   .home {
     > .offer-box {
       flex-direction: column;
@@ -496,7 +537,7 @@ img:hover {
   .home {
     > .offer-box {
       flex-direction: column;
-      margin-top: 50px; 
+      margin-top: 50px;
     }
 
     > .home-about-box {

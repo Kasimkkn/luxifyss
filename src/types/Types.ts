@@ -34,7 +34,7 @@ export type CartItem = {
   price: number;
   size:number;
   quantity: number;
-  stock: number;
+  stock: number | 1;
 };
 export type OrderItem = Omit<CartItem, "stock"> & { _id: string };
 

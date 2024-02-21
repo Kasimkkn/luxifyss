@@ -57,8 +57,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        
+      
         <div className="home-about-box">
           <div
             className="home-aboutimage"
@@ -126,6 +125,7 @@ const Home = () => {
                 price: number;
                 color: string;
                 photos: string[];
+                description: string;
               }) => (
                 <ProductCard
                   key={i._id}
@@ -134,6 +134,7 @@ const Home = () => {
                   price={i.price}
                   color={i?.color}
                   photos={i?.photos}
+                  description={i?.description}
                 />
               )
             )
@@ -141,7 +142,6 @@ const Home = () => {
         </main>
         </div>
         <ImageSlider />   
-        <div className="popular-products-box">
           <div className="popular-products">
             <div className="popular-content">
               <h2>
@@ -204,7 +204,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        
 
         <Footer />
       </section>
