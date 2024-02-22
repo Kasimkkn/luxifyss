@@ -202,70 +202,105 @@ img:hover {
       }
     }
   }
- .popular-products {
-      background-color: #2F2E3E;
-      padding: 2rem;
-      margin: 3rem 5rem;
-      @include flex(row, center, flex-start, 2rem);
-      > .popular-content {
-        @include flex(column, center, center, 1.5rem);
-        > h2 {
-          align-self: flex-start;
-          font-size: 1.8rem;
-          letter-spacing: 1px;
-          font-weight: 500;
-          color: $color3;
-          word-wrap: break-word;
-        }
-        .popular-box {
-          @include flex(column, flex-start, center, 1rem);
+  .popular-products {
+    background-color: #2f2e3e;
+    margin: 3rem 6rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    > .popular-content {
+      width: 65%;
+      margin: 3rem 1.5rem;
+      @include flex(column, flex-start, flex-start, 1.5rem);
+      > h2 {
+        align-self: flex-start;
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+        font-weight: 500;
+        color: $color3;
+        word-wrap: break-word;
+      }
+      .popular-box {
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
 
-          > span {
-            display: flex;
-            gap: 0.5rem;
-            font-size: 1.2rem;
-            @include flex(row, center, flex-start, 1rem);
+        > span {
+          display: flex;
+          gap: 0.5rem;
+          align-items: center;
 
-            > .icons {
-              background-color: $color3;
-              width: 50px;
-              height: 50px;
-              padding: 0.4rem;
-              border-radius: 10px;
-              @include flex(row, center, center, 0.5rem);
-              > svg {
-                color: $color2;
-                font-size: 2rem;
-              }
+          > .icons {
+            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            padding: 0.4rem;
+            border-radius: 10px;
+            @include flex(row, center, center, 0.5rem);
+            > svg {
+              color: red;
+              font-size: 2rem;
             }
-            > .description {
-              color: $color1;
-              font-weight: 400;
-              > span {
-                font-size: 1.3rem;
-                color: $color3;
-                font-weight: 200;
-              }
-              > p {
-                font-size: 1rem;
-                font-weight: 300;
-              }
+            > .green {
+              color: green;
+            }
+            > .red {
+              color: red;
+            }
+            > .blue {
+              color: rgb(79, 79, 248);
+            }
+            > .yellow {
+              color: yellow;
             }
           }
-        }
-      }
-      > .popular-image {
-        @include flex(column, space-between, center, 0.5rem);
-        > .image-box {
-          width: 20rem;
-          border-radius: 15px;
-          > img {
-            width: 100%;
-            object-fit: cover;
+          > .description {
+            color: $color1;
+            font-weight: 200;
+            > span {
+              font-size: 1.4rem;
+              color: $color3;
+              font-weight: 200;
+            }
           }
         }
       }
     }
+    > .popular-images {
+      width: 40%;
+      display: flex;
+      flex-direction: row;
+      background-color: #4c4d59;
+      border-radius: 0 20px 20px 0;
+      align-items: center;
+      padding: 1rem;
+      .main-image {
+        padding: 1rem;
+        .image-box {
+          width: 100%;
+        }
+      }
+      .small-images {
+        display: flex;
+        flex-direction: column;
+
+        .image-box {
+          width: 4rem;
+          margin-bottom: 1rem;
+          background: rgba(255, 255, 255, 0.1);
+          box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+          backdrop-filter: blur(0px);
+          -webkit-backdrop-filter: blur(0px);
+          border-radius: 10px;
+        }
+      }
+
+      .image-box img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
 
   footer {
     border-top: 1px solid #434343;
@@ -372,8 +407,8 @@ img:hover {
   width: 18.75rem;
   border-radius: 20px;
   @include flex(column, center, center, 4px);
-  background-color: #2F2E3E;
-  >.image-div{
+  background-color: #2f2e3e;
+  > .image-div {
     display: flex;
     justify-content: center;
     border-radius: 20px;
@@ -382,60 +417,60 @@ img:hover {
       object-fit: cover;
     }
   }
-  >.content-div{
+  > .content-div {
     padding: 1rem 0.4rem;
     width: 100%;
-    >.content1{
+    > .content1 {
       display: flex;
-    justify-content: space-between;
-    padding: 0.1rem 1rem; 
-    > p {
-      font-size: 1.2rem;
-      font-weight: 300;
-      text-transform: capitalize;
-      color: $color1;
-    }
-    > span {
-      font-size: 1rem;
-      font-weight: 200;
-      letter-spacing: 1px;
-      text-transform: capitalize;
-      color: $color1;
-    }
-    }
-    >.content2{
-      display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 0.1rem 1rem; 
-    align-items: center;
-      
-    p {
-      font-size: 0.8rem;
-      font-weight: 200;
-      align-self: flex-start;
-      text-transform: capitalize;
-      color: $color1;
-    }
-    button{
-      padding: 0.7rem 1rem;
-      width: 100%;
-      border-radius: 20px;
-      border: none;
-      background-color: $color3;
-      color: $color2;
-      &:hover{
-        cursor: pointer;
-        background-color: $color2;
-        color: $color3;
+      justify-content: space-between;
+      padding: 0.1rem 1rem;
+      > p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        text-transform: capitalize;
+        color: $color1;
+      }
+      > span {
+        font-size: 1rem;
+        font-weight: 200;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+        color: $color1;
       }
     }
+    > .content2 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0.1rem 1rem;
+      align-items: center;
+
+      p {
+        font-size: 0.8rem;
+        font-weight: 200;
+        align-self: flex-start;
+        text-transform: capitalize;
+        color: $color1;
+      }
+      button {
+        padding: 0.7rem 1rem;
+        width: 100%;
+        border-radius: 20px;
+        border: none;
+        background-color: $color3;
+        color: $color2;
+        &:hover {
+          cursor: pointer;
+          background-color: $color2;
+          color: $color3;
+        }
+      }
     }
   }
 }
 
 @media screen and (max-width: 768px) {
-  .home-container{
+  .home-container {
     padding-top: 0rem;
   }
   .home {
@@ -472,8 +507,9 @@ img:hover {
       }
     }
 
-    > .popular-products-box {
       > .popular-products {
+        width: 100%;
+        margin: 0;
         flex-direction: column;
 
         > .popular-content {
@@ -486,7 +522,6 @@ img:hover {
             width: 100%;
           }
         }
-      }
     }
   }
 }
@@ -515,19 +550,31 @@ img:hover {
       }
     }
 
-    > .popular-products-box {
-      > .popular-products {
-        flex-direction: column;
+    > .popular-products {
+      flex-direction: column;
 
-        > .popular-content {
-          width: 100%;
-          align-items: center;
-        }
-        > .popular-image {
-          width: 100%;
-          > .image-box {
-            width: 100%;
+      > .popular-content {
+        width: 100%;
+        display: block;
+        margin: 1rem 0.5rem;
+      }
+      > .popular-images {
+        width: 100%;
+        flex-direction: column;
+        .small-images {
+          gap: 1rem;
+          flex-direction: row;
+          .image-box {
+            width: 7rem;
           }
+        }
+        .main-image{
+          padding: 0rem;
+        }
+  
+        .image-box img {
+          width: 100%;
+          object-fit: cover;
         }
       }
     }
@@ -546,6 +593,92 @@ img:hover {
       flex-direction: column-reverse;
       > .home-aboutimage {
         width: 100%;
+      }
+    }
+    > .popular-products {
+
+      > .popular-content {
+        > h2 {
+          font-size: 1.8rem;
+        }
+        .popular-box {
+          margin: 1rem 0rem;
+          > span {
+            > .description {
+              > span {
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+      > .popular-images {
+        width: 100%;
+        flex-direction: column;
+        .small-images {
+          gap: 1rem;
+          flex-direction: row;
+          .image-box {
+            width: 7rem;
+          }
+        }
+        .main-image{
+          padding: 0rem;
+        }
+  
+        .image-box img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .home {
+    padding: 0;
+    > .offer-box {
+      padding: 2rem;
+    }
+    > .home-about-box {
+      padding: 0rem 2rem;
+    }
+    > .newArrivals {
+      padding: 0rem 2rem;
+      > h1 {
+        margin-top: 0rem;
+        padding: 0rem;
+        span {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    > .popular-products {
+      width: 100%;
+      padding: 2rem;
+      background-color: $color2;
+      > .popular-content {
+        > h2 {
+          font-size: 1.8rem;
+        }
+        .popular-box {
+          margin: 1rem 0rem;
+          > span {
+            > .description {
+              > span {
+                font-size: 1.2rem;
+              }
+            }
+          }
+        }
+      }
+      > .popular-images {
+        .small-images {
+          flex-wrap: wrap;
+          .image-box {
+            width: 7rem;
+          }
+        }
       }
     }
   }

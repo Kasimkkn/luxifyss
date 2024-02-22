@@ -9,6 +9,7 @@ import { MdAllInclusive } from "react-icons/md";
 import { TbPremiumRights } from "react-icons/tb";
 import arrowImg from "../assets/images/arrow.png";
 import ImageSlider from "../components/imageSlider.tsx";
+import { FaRegThumbsUp } from "react-icons/fa";
 const Home = () => {
   const { data, isLoading, isError } = useLatestProductsQuery("");
   if (isError) toast.error("Cannot Fetch the Products");
@@ -22,7 +23,8 @@ const Home = () => {
               Winter <span>Collection</span>
             </h2>
             <p>
-            Step into the season with our winter collection shoes, where warmth meets style in every step.
+              Step into the season with our winter collection shoes, where
+              warmth meets style in every step.
             </p>
             <Link className="linkBtn" to={"/search"}>
               Buy now
@@ -57,7 +59,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      
+
         <div className="home-about-box">
           <div
             className="home-aboutimage"
@@ -74,7 +76,8 @@ const Home = () => {
           <div className="home-about-content">
             <h2>About Us</h2>
             <p>
-            Redefining fashion and functionality with our exclusive collection of premium quality shoes for trendsetters like you.
+              Redefining fashion and functionality with our exclusive collection
+              of premium quality shoes for trendsetters like you.
             </p>
             <div className="home-about-box-popularity">
               <span>
@@ -106,94 +109,116 @@ const Home = () => {
         </div>
 
         <div className="newArrivals">
-        <h1>
-          <span>
-          New Arrivals</span>
-          <Link to="/search" className="findmore">
-            More
-          </Link>
-        </h1>
+          <h1>
+            <span>New Arrivals</span>
+            <Link to="/search" className="findmore">
+              More
+            </Link>
+          </h1>
 
-        <main>
-          {isLoading ? (
-            <Skeleton width="100vw" length={7} />
-          ) : (
-            data?.products.map(
-              (i: {
-                _id: string;
-                name: string;
-                price: number;
-                color: string;
-                photos: string[];
-                description: string;
-              }) => (
-                <ProductCard
-                  key={i._id}
-                  productId={i._id}
-                  name={i.name}
-                  price={i.price}
-                  color={i?.color}
-                  photos={i?.photos}
-                  description={i?.description}
-                />
+          <main>
+            {isLoading ? (
+              <Skeleton width="100vw" length={7} />
+            ) : (
+              data?.products.map(
+                (i: {
+                  _id: string;
+                  name: string;
+                  price: number;
+                  color: string;
+                  photos: string[];
+                  description: string;
+                }) => (
+                  <ProductCard
+                    key={i._id}
+                    productId={i._id}
+                    name={i.name}
+                    price={i.price}
+                    color={i?.color}
+                    photos={i?.photos}
+                    description={i?.description}
+                  />
+                )
               )
-            )
-          )}
-        </main>
+            )}
+          </main>
         </div>
-        <ImageSlider />   
-          <div className="popular-products">
-            <div className="popular-content">
-              <h2>
-                Latest & Trending Products
-              </h2>
-              <div className="popular-box">
-                <span>
-                  <div className="icons">
-                    <TbPremiumRights />
-                  </div>
-                  <div className="description">
-                    <span>Premium Quality Shoes</span>
-                    <p>
-                      Elevate your style with our collection of premium quality
-                      shoes. Crafted with precision and comfort in mind, our
-                      shoes redefine fashion and functionality.
-                    </p>
-                  </div>
-                </span>
-                <span>
-                  <div className="icons">
-                    <MdAllInclusive />
-                  </div>
-                  <div className="description">
-                    <span>All-Inclusive Design</span>
-                    <p>
-                      Elevate your style with our collection of premium quality
-                      shoes. Crafted with precision and comfort in mind, our
-                      shoes redefine fashion and functionality.
-                    </p>
-                  </div>
-                </span>
-                <span>
-                  <div className="icons">
-                    <IoIosPricetags />
-                  </div>
-                  <div className="description">
-                    <span>Exclusive Shoe Collection</span>
-                    <p>
-                      Elevate your style with our collection of premium quality
-                      shoes. Crafted with precision and comfort in mind, our
-                      shoes redefine fashion and functionality.
-                    </p>
-                  </div>
-                </span>
+        <ImageSlider />
+        <div className="popular-products">
+          <div className="popular-content">
+            <h2>Latest & Trending Products</h2>
+            <div className="popular-box">
+              <span>
+                <div className="icons">
+                  <TbPremiumRights className="red" />
+                </div>
+                <div className="description">
+                  <span>Premium Quality Shoes</span>
+                </div>
+              </span>
+              <span>
+                <div className="icons">
+                  <MdAllInclusive className="green" />
+                </div>
+                <div className="description">
+                  <span>All-Inclusive Design</span>
+                </div>
+              </span>
+              <span>
+                <div className="icons">
+                  <IoIosPricetags className="blue" />
+                </div>
+                <div className="description">
+                  <span>Exclusive Shoe Collection</span>
+                </div>
+              </span>
+              <span>
+                <div className="icons">
+                  <FaRegThumbsUp className="yellow" />
+                </div>
+                <div className="description">
+                  <span>Best Qaulity Collection</span>
+                </div>
+              </span>
+            </div>
+          </div>
+          <div className="popular-images">
+            <div className="small-images">
+              <div className="image-box">
+                <img
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  alt="smallImg1"
+                  loading="lazy"
+                />
+              </div>
+              <div className="image-box">
+                <img
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  alt="smallImg2"
+                  loading="lazy"
+                />
+              </div>
+              <div className="image-box">
+                <img
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  alt="smallImg3"
+                  loading="lazy"
+                />
+              </div>
+              <div className="image-box">
+                <img
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  alt="smallImg4"
+                  loading="lazy"
+                />
               </div>
             </div>
-            <div className="popular-image">
+            <div className="main-image">
               <div
                 className="image-box"
                 style={{
                   background: `linear-gradient(to top, purple, white)`,
+                  borderRadius: "15px"
                 }}
               >
                 <img
@@ -204,7 +229,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        
+        </div>
 
         <Footer />
       </section>

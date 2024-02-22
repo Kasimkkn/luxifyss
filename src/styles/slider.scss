@@ -200,8 +200,14 @@
     }
   }
   @media (max-width: 500px) {
-    height:90vh;
-
+    height:75vh;
+    >h1{
+      span{
+        font-size: 1.4rem;
+      }
+        margin-top: 0rem;
+        padding: 0rem 2.2rem;
+    }
     .slider {
       .slides {
         &:nth-child(1),
