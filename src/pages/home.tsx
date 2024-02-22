@@ -144,6 +144,7 @@ const Home = () => {
           </main>
         </div>
         <ImageSlider />
+        
         <div className="popular-products">
           <div className="popular-content">
             <h2>Latest & Trending Products</h2>
@@ -184,28 +185,28 @@ const Home = () => {
           </div>
           <div className="popular-images">
             <div className="small-images">
-              <div className="image-box">
+              <div className="image-box" style={{background:"linear-gradient(45deg , #995130 ,white)"}}>
                 <img
                   src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273827/uefsb56yaokbu8qh8p9d.png"
                   alt="smallImg1"
                   loading="lazy"
                 />
               </div>
-              <div className="image-box">
+              <div className="image-box" style={{background:"linear-gradient(45deg , #061C0F ,white)"}}>
                 <img
                   src="https://res.cloudinary.com/dzwspepvg/image/upload/v1708055564/products/tlklunsunrn2kwodl5qx.png"
                   alt="smallImg2"
                   loading="lazy"
                 />
               </div>
-              <div className="image-box">
+              <div className="image-box" style={{background:"linear-gradient(45deg , #780D0D ,white)"}}>
                 <img
                   src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png"
                   alt="smallImg3"
                   loading="lazy"
                 />
               </div>
-              <div className="image-box">
+              <div className="image-box" style={{background:"linear-gradient(45deg , #D1BCD0 ,black)"}}>
                 <img
                   src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
                   alt="smallImg4"
@@ -217,7 +218,7 @@ const Home = () => {
               <div
                 className="image-box"
                 style={{
-                  background: `linear-gradient(to top, orange, white)`,
+                  background: `linear-gradient(to top, #E66D12, white)`,
                   borderRadius: "15px"
                 }}
               >
