@@ -55,8 +55,8 @@ const Orders = () => {
                       />
                     </div>
                     <div className="item-details">
-                      <Link to={`/product/${item.productId}`}>
-                        Name: {item.name.split("").slice(0,25).join("")}...
+                      <Link to={`/product/${item.productId}`} style={{ textTransform: "uppercase" }}>
+                      {item.name.split("").slice(0,18).join("")}...
                       </Link>
                       <p>Price: {item.price}</p>
                       <p>Quantity: {item.quantity}</p>

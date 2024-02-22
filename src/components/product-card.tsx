@@ -9,6 +9,7 @@ type ProductsProps = {
   photos: string[];
   name: string;
   color: string;
+  stock: number;
   price: number;
   description: string;
 };
@@ -19,6 +20,7 @@ const ProductCard = ({
   name,
   photos,
   color,
+  stock,
   description,
 }: ProductsProps) => {
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ const ProductCard = ({
       photo: photos[0],
       name,
       price,
-      stock: 1,
+      stock: stock,
       size: 6,
       quantity: 1,
     };

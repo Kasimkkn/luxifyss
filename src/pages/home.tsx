@@ -127,6 +127,7 @@ const Home = () => {
                   price: number;
                   color: string;
                   photos: string[];
+                  stock: number;
                   description: string;
                 }) => (
                   <ProductCard
@@ -135,6 +136,7 @@ const Home = () => {
                     name={i.name}
                     price={i.price}
                     color={i?.color}
+                   stock = {i?.stock}   
                     photos={i?.photos}
                     description={i?.description}
                   />
