@@ -42,7 +42,7 @@ const Orders = () => {
                     <div
                       className="product-photo"
                       style={{
-                        background: `linear-gradient(to bottom,black,white`,
+                        background: `linear-gradient(to top,white,black)`,
                       }}
                     >
                       <img
