@@ -186,21 +186,21 @@ const Home = () => {
             <div className="small-images">
               <div className="image-box">
                 <img
-                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273827/uefsb56yaokbu8qh8p9d.png"
                   alt="smallImg1"
                   loading="lazy"
                 />
               </div>
               <div className="image-box">
                 <img
-                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1708055564/products/tlklunsunrn2kwodl5qx.png"
                   alt="smallImg2"
                   loading="lazy"
                 />
               </div>
               <div className="image-box">
                 <img
-                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png"
                   alt="smallImg3"
                   loading="lazy"
                 />
@@ -217,12 +217,12 @@ const Home = () => {
               <div
                 className="image-box"
                 style={{
-                  background: `linear-gradient(to top, purple, white)`,
+                  background: `linear-gradient(to top, orange, white)`,
                   borderRadius: "15px"
                 }}
               >
                 <img
-                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png"
+                  src="https://res.cloudinary.com/dzwspepvg/image/upload/v1708535415/products/tn0ejyctexes3deo7y2h.png"
                   alt="popularImg"
                   loading="lazy"
                 />
