@@ -590,7 +590,9 @@ img:hover {
     }
 
     > .home-about-box {
-      padding: 0;
+      width: 100%;
+    margin: 0;
+    padding: 2rem; 
       align-items: center;
       flex-direction: column-reverse;
       > .home-aboutimage {
@@ -598,7 +600,7 @@ img:hover {
       }
     }
     > .popular-products {
-
+          padding: 2rem;
       > .popular-content {
         > h2 {
           font-size: 1.8rem;
@@ -643,10 +645,14 @@ img:hover {
       padding: 2rem;
     }
     > .home-about-box {
-      padding: 0rem 2rem;
+      padding: 2rem;
+    width: 100%;
+    margin: 0;
+    margin: 4rem 0rem;
+    background: none;
     }
     > .newArrivals {
-      padding: 0rem 2rem;
+      padding: 2rem;
       > h1 {
         margin-top: 0rem;
         padding: 0rem;

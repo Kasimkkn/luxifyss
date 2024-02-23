@@ -38,7 +38,7 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707274074/kwf1rzngwhxpto3slllx.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708692164/dfqfray0plbwgqldpjym.png')`,
               background: "linear-gradient(to bottom,blac,white)",
             }}
           >
@@ -52,7 +52,7 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707105026/0824aec2-47fc-418d-b0e0-8da78ffa3049.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708691975/yyupxwat3iznkbzfawvt.png')`,
             }}
           >
             <div className="content">
@@ -65,7 +65,7 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707104889/e6af0fcf-4851-45ed-bfe2-7627b9d9f42c.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708691941/aq9p6ztlinndqtqe7sdw.png')`,
             }}
           >
             <div className="content">
@@ -78,7 +78,7 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707104755/1c9a4ba5-5201-411a-9413-686b64b4039c.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708691974/nnjmmhtjcbanjgnorlqk.png')`,
             }}
           >
             <div className="content">
@@ -91,7 +91,7 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707273814/yirdeipefttoo2zvurq4.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708691974/dyvw2kotlzcw32isncyf.png')`,
             }}
           >
             <div className="content">
@@ -104,11 +104,11 @@ const ImageSlider = () => {
           <div
             className="slides"
             style={{
-              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1707103938/5e57b124-e954-4bdd-bf33-349fee0ed981.png')`,
+              backgroundImage: `url('https://res.cloudinary.com/dzwspepvg/image/upload/v1708691978/ugl1nkuvcywt0qvx4yf4.png')`,
             }}
           >
             <div className="content">
-              <h2>PowerStride Pro Athletic Shoes</h2>
+              <h2>Pro Athletic Shoes</h2>
               <Link className="linkBtn" to={"/search"}>
                 buy now
               </Link>

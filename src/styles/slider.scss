@@ -57,7 +57,7 @@
         width: 100%;
         transform: translateX(0);
         box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        background-size: 558px;
+        background-size: cover;
         background-repeat: no-repeat;
         background-origin: content-box;
       }
@@ -142,7 +142,7 @@
     opacity: 0;
 
     h2 {
-      color: $color2;
+      color: $color1;
       font-weight: 300;
       letter-spacing: 2px;
     }
@@ -159,6 +159,7 @@
   .slider .slides:nth-child(2) .content {
     opacity: 1;
     transform: translateY(0px);
+    bottom: 55%;
     transition-delay: 0.5s;
   }
 
@@ -200,7 +201,7 @@
     }
   }
   @media (max-width: 500px) {
-    height:75vh;
+    height:90vh;
     >h1{
       span{
         font-size: 1.4rem;
@@ -214,7 +215,7 @@
         &:nth-child(2) {
           top: initial;
           bottom: 0px;
-          background-size: contain;
+          background-size: cover;
         }
       }
     }
