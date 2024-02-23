@@ -16,7 +16,7 @@ img:hover {
   > .offer-box {
     display: flex;
     justify-content: center;
-    padding: 1rem;
+    padding: 2rem;
     > .offer-content {
       padding-bottom: 4rem;
       @include flex(column, center, flex-start, 2rem);
@@ -99,9 +99,11 @@ img:hover {
   }
 
   > .home-about-box {
-    margin: 5rem 0rem;
+    background: #2f2e3e;
+    margin: 3rem 6rem ;
+    border-radius: 15px;
     display: flex;
-    padding: 0.5rem 5em;
+    padding: 2rem 2rem;
     gap: 2rem;
 
     > .home-aboutimage {
