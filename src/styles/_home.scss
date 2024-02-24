@@ -26,9 +26,13 @@ img:hover {
         font-size: 5.5rem;
         line-height: 5rem;
         color: $color1;
-        > span {
-          color: $color3;
-        }
+        
+      }
+      > span {
+        word-wrap: break-word;
+        font-size: 5.5rem;
+        line-height: 5rem;
+        color: $color3;
       }
       > p {
         word-wrap: break-word;
