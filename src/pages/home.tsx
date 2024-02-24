@@ -59,7 +59,7 @@ const Home = () => {
         initial="hidden"
         animate={offerControls}
         variants={{
-          visible: { opacity: 1, transition: { duration: 0.5 } },
+          visible: { opacity: 1, transition: { duration: 1 } },
           hidden: { opacity: 0 },
         }}
       >
@@ -91,8 +91,8 @@ const Home = () => {
           <motion.div
             className="offer-image"
             variants={{
-              visible: { opacity: 1, x: 1 },
-              hidden: { opacity: 0, x: -550 },
+              visible: { opacity: 1, y: 0 ,transition: { delay: 1,duration: 1.5 } },
+              hidden: { opacity: 0, y: -550 },
             }}
           >
             <img
@@ -125,8 +125,8 @@ const Home = () => {
         >
           <motion.div
             variants={{
-              visible: { opacity: 1, x: 1 },
-              hidden: { opacity: 0, x: -550 },
+              visible: { opacity: 1, y: 0 ,transition: { delay: 2,duration: 1.5 } },
+              hidden: { opacity: 0, y: -550 },
             }}
             className="home-aboutimage"
             style={{
@@ -199,7 +199,7 @@ const Home = () => {
           </motion.h1>
           <motion.main
             variants={{
-              visible: { opacity: 1, y: 0 },
+              visible: { opacity: 1, y: 0 , transition: { delay: 1,duration: 1.5 } },
               hidden: { opacity: 0, y: -550 },
             }}
           >
@@ -231,6 +231,7 @@ const Home = () => {
             )}
           </motion.main>
         </motion.div>
+
         <ImageSlider />
 
         <motion.div
@@ -289,8 +290,8 @@ const Home = () => {
           <motion.div
             className="popular-images"
             variants={{
-              visible: { opacity: 1, x: 1 },
-              hidden: { opacity: 0, x: -550 },
+              visible: { opacity: 1, y: 0, transition: { delay: 1,duration: 1.5 }},
+              hidden: { opacity: 0, y: 550 },
             }}
           >
             <div className="small-images">

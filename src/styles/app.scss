@@ -104,18 +104,6 @@ svg:hover {
       color: $color3;
     }
   }
-  dialog {
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    position: absolute;
-    left: calc(100% - 100px);
-    top: 8%;
-    background-color: $color2;
-    > div {
-      @include flex(column, flex-start, center, 0.25rem);
-    }
-  }
   .logo {
     height: 50px;
     width: 70px;
@@ -139,7 +127,9 @@ svg:hover {
     margin-left: 100px;
     gap: 20px;
     padding: 10px 30px;
-
+    li{
+      list-style: none;
+    }
     a {
       text-decoration: none;
       color: $color1;

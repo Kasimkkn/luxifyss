@@ -11,6 +11,7 @@ import { User } from "../types/Types";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import toast from "react-hot-toast";
+import { motion } from "framer-motion";
 
 interface PropsType {
   user: User | null;
@@ -33,7 +34,12 @@ const Header = ({ user }: PropsType) => {
   };
 
   return (
-    <nav className={`navbar ${showMenu ? "active" : ""}`}>
+    <motion.nav
+      className={`navbar ${showMenu ? "active" : ""}`}
+      initial={{ y: -50, opacity: 0 }} 
+      animate={{ y: 0, opacity: 1 }} 
+      exit={{ y: -50, opacity: 0 }} 
+    >
       <div className="navbar-toggle" onClick={toggleMenu}>
         <FaBars />
       </div>
@@ -43,12 +49,22 @@ const Header = ({ user }: PropsType) => {
         </h2>
       </div>
       <ul>
-        <Link to={"/"}>Home</Link>
-        <Link to={"/search"}>Products</Link>
-        <Link to={"/about"}>About</Link>
-        <Link to={"/orders"}>Orders</Link>
+        <motion.li whileHover={{ scale: 1.2 }}>
+          <Link to={"/"}>Home</Link>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.2 }}>
+          <Link to={"/search"}>Products</Link>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.2 }}>
+          <Link to={"/about"}>About</Link>
+        </motion.li>
+        <motion.li whileHover={{ scale: 1.2 }}>
+          <Link to={"/orders"}>Orders</Link>
+        </motion.li>
         {user?._id && user.role === "admin" && (
-          <Link to="/admin/dashboard">Admin</Link>
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link to="/admin/dashboard">Admin</Link>
+          </motion.li>
         )}
       </ul>
       <div className="icons">
@@ -66,12 +82,14 @@ const Header = ({ user }: PropsType) => {
             </button>
           </>
         ) : (
-          <Link to={"/login"}>
-            <FaUser />
-          </Link>
+          <motion.li whileHover={{ scale: 1.2 }}>
+            <Link to={"/login"}>
+              <FaUser />
+            </Link>
+          </motion.li>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

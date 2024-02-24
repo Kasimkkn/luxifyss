@@ -334,7 +334,7 @@ img:hover {
 
         h2 {
           @include heading();
-          font-size: 1.4rem;
+          font-size: 2.4rem;
           color: $color3;
         }
 
@@ -486,7 +486,11 @@ img:hover {
       > .offer-content {
         gap: 1rem;
         width: 100%;
+        padding-bottom: 0rem;
         > h2 {
+          font-size: 3.4rem;
+        }
+        > span{
           font-size: 3.4rem;
         }
       }
@@ -652,7 +656,7 @@ img:hover {
       padding: 2rem;
     width: 100%;
     margin: 0;
-    margin: 4rem 0rem;
+    margin: 1rem 0rem;
     background: none;
     }
     > .newArrivals {
