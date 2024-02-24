@@ -6,6 +6,7 @@ import { addToCart } from "../redux/reducer/cartReducer";
 import { useDispatch } from "react-redux";
 import { CartItem } from "../types/Types";
 import { useState } from "react";
+import Typewriter from "../components/Typwriter";
 
 const ProductDetails = () => {
   const [size, setSize] = useState(5);
@@ -35,8 +36,8 @@ const ProductDetails = () => {
           ))}
       </div>
       <div className="product-description">
-        <h1>{data?.product.name}</h1>
-        <h5>{data?.product.category}</h5>
+        <Typewriter tag="h1" speed={20} text={data?.product.name || ""}/>
+        <h5>{data?.product.description}</h5>
         <span>
           <del>1499</del> ₹{data?.product.price}
         </span>

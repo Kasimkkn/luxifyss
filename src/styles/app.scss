@@ -18,7 +18,7 @@
 $color1: white;
 $color2: black;
 $color4: rgb(31, 30, 30);
-$color3: rgb(69, 167, 180);
+$color3: #CE8080;
 
 body {
   user-select: none;
@@ -184,9 +184,19 @@ svg:hover {
       transition: 1s ease-in-out;
       opacity: 0;
       transform: translateY(-100%);
+      animation-name: slideInFromLeft;
+      animation-duration: 1.5s;
+      animation-fill-mode: forwards; /* Keeps the final state of the animation */
 
-      > a {
-        font-size: 1.4rem;
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
       }
     }
 
@@ -197,6 +207,9 @@ svg:hover {
         opacity: 1;
         transform: translateY(0);
       }
+    }
+    > a {
+      font-size: 1.4rem;
     }
 
     .navbar-toggle {

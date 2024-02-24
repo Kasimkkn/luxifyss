@@ -37,7 +37,7 @@ const Header = ({ user }: PropsType) => {
     <motion.nav
       className={`navbar ${showMenu ? "active" : ""}`}
       initial={{ y: -50, opacity: 0 }} 
-      animate={{ y: 0, opacity: 1 }} 
+      animate={{ y: 0, opacity: 1, transition: { duration: 1 } }} 
       exit={{ y: -50, opacity: 0 }} 
     >
       <div className="navbar-toggle" onClick={toggleMenu}>
@@ -48,25 +48,25 @@ const Header = ({ user }: PropsType) => {
           <Link to="/">LUXIFY</Link>
         </h2>
       </div>
-      <ul>
-        <motion.li whileHover={{ scale: 1.2 }}>
-          <Link to={"/"}>Home</Link>
+      <motion.ul>
+        <motion.li whileHover={{ scale: 1.1 }}>
+          <Link to={"/"} onClick={() => setShowMenu(false)}>Home</Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.2 }}>
-          <Link to={"/search"}>Products</Link>
+        <motion.li whileHover={{ scale: 1.1 }}>
+          <Link to={"/search"} onClick={() => setShowMenu(false)}>Products</Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.2 }}>
-          <Link to={"/about"}>About</Link>
+        <motion.li whileHover={{ scale: 1.1 }}>
+          <Link to={"/about"} onClick={() => setShowMenu(false)}>About</Link>
         </motion.li>
-        <motion.li whileHover={{ scale: 1.2 }}>
-          <Link to={"/orders"}>Orders</Link>
+        <motion.li whileHover={{ scale: 1.1 }}>
+          <Link to={"/orders"} onClick={() => setShowMenu(false)}>Orders</Link>
         </motion.li>
         {user?._id && user.role === "admin" && (
-          <motion.li whileHover={{ scale: 1.2 }}>
-            <Link to="/admin/dashboard">Admin</Link>
+          <motion.li whileHover={{ scale: 1.1 }}>
+            <Link to="/admin/dashboard" onClick={() => setShowMenu(false)}>Admin</Link>
           </motion.li>
         )}
-      </ul>
+      </motion.ul>
       <div className="icons">
         <Link to={"/search"}>
           <FaSearch />
@@ -82,7 +82,7 @@ const Header = ({ user }: PropsType) => {
             </button>
           </>
         ) : (
-          <motion.li whileHover={{ scale: 1.2 }}>
+          <motion.li whileHover={{ scale: 1.1 }}>
             <Link to={"/login"}>
               <FaUser />
             </Link>
