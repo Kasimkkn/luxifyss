@@ -18,7 +18,7 @@
 $color1: white;
 $color2: black;
 $color4: rgb(31, 30, 30);
-$color3: #CE8080;
+$color3: #ce8080;
 
 body {
   user-select: none;
@@ -127,7 +127,7 @@ svg:hover {
     margin-left: 100px;
     gap: 20px;
     padding: 10px 30px;
-    li{
+    li {
       list-style: none;
     }
     a {
@@ -150,10 +150,24 @@ svg:hover {
     gap: 1rem;
     a {
       color: $color1;
+      position: relative;
       font-size: 22px;
 
       &:hover {
         color: $color3;
+      }
+
+      .totalCartItems {
+        position: absolute;
+        top: -4px;
+        left: 10px;
+        background: black;
+        z-index: 10000;
+        color: #ce8080;
+        font-weight: 200;
+        padding: 0px 5px;
+        font-size: 1rem;
+        border-radius: 50%;
       }
     }
   }

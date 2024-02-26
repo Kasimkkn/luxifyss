@@ -17,7 +17,7 @@ import { useState } from "react";
 const { last6Months: months } = getLastMonths();
 
 const Dashboard = () => {
-  const [showNotifications, setShowNotifications] = useState(false); // State to track notification panel visibility
+  const [showNotifications, setShowNotifications] = useState(false); 
 
   const { user } = useSelector((state: RootState) => state.userReducer);
 

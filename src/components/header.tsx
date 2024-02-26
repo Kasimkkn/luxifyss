@@ -6,18 +6,21 @@ import {
   FaSignOutAlt,
   FaUser,
 } from "react-icons/fa";
-import { useState } from "react";
+import {  useState } from "react";
 import { User } from "../types/Types";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import toast from "react-hot-toast";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
 
 interface PropsType {
   user: User | null;
 }
 
 const Header = ({ user }: PropsType) => {
+  const cartItems = useSelector((state: RootState) => state.cartReducer.cartItems);
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -32,7 +35,7 @@ const Header = ({ user }: PropsType) => {
       toast.error("Sign Out Fail");
     }
   };
-
+  
   return (
     <motion.nav
       className={`navbar ${showMenu ? "active" : ""}`}
@@ -73,6 +76,7 @@ const Header = ({ user }: PropsType) => {
         </Link>
         <Link to={"/cart"}>
           <FaShoppingCart />
+          <span className="totalCartItems">{cartItems.length || 0}</span>
         </Link>
 
         {user?._id ? (
