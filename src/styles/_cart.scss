@@ -60,13 +60,19 @@
   }
   
   .cart-item {
-    padding: 0.4rem 2rem;
+    background-color: rgb(31, 30, 30);
+    padding: 1rem 2rem;
     border-radius: 15px;
-    background: linear-gradient(to left, rgb(24, 23, 23),#3c2917);
-    @include flex(row, flex-start, center, 3rem);
-    > img {
+    @include flex(row, center, center, 3rem);
+    .cart-item-img{
+      margin-left: 0;
       @include square(10rem);
-      object-fit: contain;
+      border-radius: 15px;
+      background: linear-gradient(45deg, rgb(24, 23, 23),$color3);
+      > img {
+        @include square(10rem);
+        object-fit: contain;
+      }
     }
   
     > article {
@@ -142,10 +148,28 @@
   .cart-item{
     flex-direction: column;
     align-items: flex-start;
+    >.cart-item-img{
+      width: 100%;
+      height: 100%;
+      >img{
+        width: 100%;
+        height: 16rem;
+      }
+    }
+    >article{
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
     >div{
       margin-left: 0;
       width: 100%;
-      justify-content: flex-start;
+      align-self: center;
+    }
+    >button{
+      
+      font-size: 1.5rem;
+      align-self: center;
     }
   }
 
