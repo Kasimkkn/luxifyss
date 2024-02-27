@@ -80,13 +80,30 @@
         }
         .contact{
             padding: 0.5rem;
+            h1{
+              margin: 2rem 0;
+            }
             .row{
                 flex-direction: column-reverse;
                 .map{
-                    padding:1rem;
+                    padding:0.5rem;
                 }
                 form{
-                    padding: 1rem;
+                    padding: 1.5rem 0.6rem;
+                    flex: 0;
+                    h3{
+                        font-size: 1.5rem;
+                    }
+                    .box{
+                      padding: 0.8rem;
+                    }
+                    textarea{
+                      height: 7rem;
+                    }
+                    .btn{
+                      padding: 0.8rem 1rem;
+                      font-size: 1rem;
+                    }
                 }
             }
         }
