@@ -1,19 +1,94 @@
-.about-page{
-    margin-top: 80px;
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem ;
+.about-page {
+  margin-top: 80px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 
-    h1{
-        @include heading(1px);
-        font-size: 1.5rem;
-        >span{
-            color: $color3;
-            font-weight: 500;
-            font-size: 2.3rem;
-            border-bottom: 1px solid #ccc;
-            width: max-content;
+  h1 {
+    @include heading(1px);
+    font-size: 1.5rem;
+    > span {
+      color: $color3;
+      font-weight: 500;
+      font-size: 2.3rem;
+      border-bottom: 1px solid #ccc;
+      width: max-content;
+    }
+  }
+
+  .contact {
+    padding: 2rem;
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      .map {
+        flex: 1 1 42rem;
+        width: 100%;
+        padding: 2rem;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+      }
+      form {
+        padding: 2rem;
+        flex: 1 1 42rem;
+        box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+        border: 1px solid #ccc;
+        text-align: center;
+        border-radius: 0.5rem;
+        h3 {
+          font-size: 3rem;
+          color: $color3;
+          padding-bottom: 1rem;
+        }
+        .box {
+          width: 100%;
+          border-radius: 0.5rem;
+          padding: 1rem 1.2rem;
+          font-size: 1.2rem;
+          text-transform: none;
+          border: 1px solid #ccc;
+          margin: 0.7rem 0;
+        }
+        textarea {
+          height: 15rem;
+          resize: none;
+        }
+        .btn {
+          padding: 0.8rem 3rem;
+          background: $color3;
+          color: $color2;
+          cursor: pointer;
+          font-size: 1.2rem;
+          border-radius: 0.5rem;
+          font-weight: 200;
+          text-align: center;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:750px) {
+    .about-page{
+        gap: 0;
+        h1{
+            width: 100%;
+        }
+        .contact{
+            padding: 0.5rem;
+            .row{
+                flex-direction: column-reverse;
+                .map{
+                    padding:1rem;
+                }
+                form{
+                    padding: 1rem;
+                }
+            }
         }
     }
 }
