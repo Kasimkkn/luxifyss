@@ -86,11 +86,9 @@ const Header = ({ user }: PropsType) => {
             </button>
           </>
         ) : (
-          <motion.li whileHover={{ scale: 1.1 }}>
             <Link to={"/login"}>
               <FaUser />
             </Link>
-          </motion.li>
         )}
       </div>
     </motion.nav>
